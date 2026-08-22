@@ -1,0 +1,151 @@
+{
+  "stage": "S2",
+  "pilot": false,
+  "verdict": "REPORT_CONTINUOUS",
+  "reading": "\u041e\u0442\u0447\u0438\u0442\u044b\u0432\u0430\u0439\u0442\u0435\u0441\u044c \u043d\u0435\u043f\u0440\u0435\u0440\u044b\u0432\u043d\u043e: 9 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0439, \u043c\u0435\u0434\u0438\u0430\u043d\u0430, 95% \u0441\u0443\u0431\u044a\u0435\u043a\u0442\u043d\u044b\u0439 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b. \u0421\u0440\u0430\u0432\u043d\u0438\u0432\u0430\u0439\u0442\u0435 \u0441 CSP-\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f\u043c\u0438 Stage 3F / 5 / 6 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e, \u043d\u0435 \u043f\u043e\u0434\u0433\u043e\u043d\u044f\u044f \u043f\u043e\u0440\u043e\u0433. \u0415\u0441\u043b\u0438 \u043c\u0435\u0434\u0438\u0430\u043d\u0430 MDM \u0431\u043b\u0438\u0437\u043a\u0430 \u043a CSP, \u043c\u0435\u0445\u0430\u043d\u0438\u0437\u043c \u043d\u0435 \u0441\u043f\u0435\u0446\u0438\u0444\u0438\u0447\u0435\u043d \u0434\u043b\u044f CSP. \u0415\u0441\u043b\u0438 \u0437\u0430\u043c\u0435\u0442\u043d\u043e \u0432\u044b\u0448\u0435, \u0432\u044b\u0432\u043e\u0434 \u0441\u0443\u0436\u0430\u0435\u0442\u0441\u044f \u0434\u043e \u0441\u0435\u043c\u0435\u0439\u0441\u0442\u0432\u0430 CSP.",
+  "validity_gates": {
+    "G0_resource_identity": true,
+    "G1_clean_validity_subjects": 7,
+    "G2_min_harm_per_valid_subject": 24377,
+    "G3_covariance_identity_max_error": 1.5396356205138744e-15,
+    "G4_nonfinite_distances": 0,
+    "G4_nonspd_events": 0,
+    "G5_karcher_failures": 0,
+    "all_ok": true
+  },
+  "median_interaction_required_valid": {
+    "median": 0.016416540020263423,
+    "ci95": [
+      0.0017738502225375734,
+      0.04700678487086254
+    ]
+  },
+  "median_interaction_required_all": {
+    "median": 0.016416540020263423,
+    "ci95": [
+      0.0017738502225375734,
+      0.04700678487086254
+    ]
+  },
+  "per_subject": [
+    {
+      "bci_subject": 1,
+      "clean_mdm_oof_accuracy": 0.875,
+      "clean_validity_pass": true,
+      "n_test_trials": 144,
+      "n_clean_correct_trials": 126,
+      "full_harm": 54295,
+      "shared_harm": 51676,
+      "interaction_required_harm": 2619,
+      "interaction_prevented_harm": 2759,
+      "no_interaction_harm_recall": 0.9517635141357399,
+      "interaction_required_harm_fraction": 0.04823648586426006
+    },
+    {
+      "bci_subject": 2,
+      "clean_mdm_oof_accuracy": 0.5555555555555556,
+      "clean_validity_pass": false,
+      "n_test_trials": 144,
+      "n_clean_correct_trials": 80,
+      "full_harm": 67222,
+      "shared_harm": 65599,
+      "interaction_required_harm": 1623,
+      "interaction_prevented_harm": 2227,
+      "no_interaction_harm_recall": 0.9758561185326232,
+      "interaction_required_harm_fraction": 0.02414388146737675
+    },
+    {
+      "bci_subject": 3,
+      "clean_mdm_oof_accuracy": 0.9444444444444444,
+      "clean_validity_pass": true,
+      "n_test_trials": 144,
+      "n_clean_correct_trials": 136,
+      "full_harm": 63168,
+      "shared_harm": 62131,
+      "interaction_required_harm": 1037,
+      "interaction_prevented_harm": 1658,
+      "no_interaction_harm_recall": 0.9835834599797366,
+      "interaction_required_harm_fraction": 0.016416540020263423
+    },
+    {
+      "bci_subject": 4,
+      "clean_mdm_oof_accuracy": 0.7013888888888888,
+      "clean_validity_pass": true,
+      "n_test_trials": 144,
+      "n_clean_correct_trials": 101,
+      "full_harm": 105178,
+      "shared_harm": 105135,
+      "interaction_required_harm": 43,
+      "interaction_prevented_harm": 295,
+      "no_interaction_harm_recall": 0.9995911692559281,
+      "interaction_required_harm_fraction": 0.0004088307440719542
+    },
+    {
+      "bci_subject": 5,
+      "clean_mdm_oof_accuracy": 0.5972222222222222,
+      "clean_validity_pass": false,
+      "n_test_trials": 144,
+      "n_clean_correct_trials": 86,
+      "full_harm": 80496,
+      "shared_harm": 80134,
+      "interaction_required_harm": 362,
+      "interaction_prevented_harm": 969,
+      "no_interaction_harm_recall": 0.9955028821307891,
+      "interaction_required_harm_fraction": 0.004497117869210893
+    },
+    {
+      "bci_subject": 6,
+      "clean_mdm_oof_accuracy": 0.6875,
+      "clean_validity_pass": true,
+      "n_test_trials": 144,
+      "n_clean_correct_trials": 99,
+      "full_harm": 93018,
+      "shared_harm": 92853,
+      "interaction_required_harm": 165,
+      "interaction_prevented_harm": 596,
+      "no_interaction_harm_recall": 0.9982261497774624,
+      "interaction_required_harm_fraction": 0.0017738502225375734
+    },
+    {
+      "bci_subject": 7,
+      "clean_mdm_oof_accuracy": 0.6805555555555556,
+      "clean_validity_pass": true,
+      "n_test_trials": 144,
+      "n_clean_correct_trials": 98,
+      "full_harm": 91300,
+      "shared_harm": 91087,
+      "interaction_required_harm": 213,
+      "interaction_prevented_harm": 1130,
+      "no_interaction_harm_recall": 0.9976670317634173,
+      "interaction_required_harm_fraction": 0.0023329682365826943
+    },
+    {
+      "bci_subject": 8,
+      "clean_mdm_oof_accuracy": 0.9513888888888888,
+      "clean_validity_pass": true,
+      "n_test_trials": 144,
+      "n_clean_correct_trials": 137,
+      "full_harm": 24377,
+      "shared_harm": 23361,
+      "interaction_required_harm": 1016,
+      "interaction_prevented_harm": 1242,
+      "no_interaction_harm_recall": 0.9583213685030971,
+      "interaction_required_harm_fraction": 0.04167863149690282
+    },
+    {
+      "bci_subject": 9,
+      "clean_mdm_oof_accuracy": 0.7152777777777778,
+      "clean_validity_pass": true,
+      "n_test_trials": 144,
+      "n_clean_correct_trials": 103,
+      "full_harm": 26677,
+      "shared_harm": 25423,
+      "interaction_required_harm": 1254,
+      "interaction_prevented_harm": 1357,
+      "no_interaction_harm_recall": 0.9529932151291375,
+      "interaction_required_harm_fraction": 0.04700678487086254
+    }
+  ],
+  "clean_validity_min_acc": 0.6,
+  "total_minutes": 6.354252254962921
+}

@@ -1,0 +1,26 @@
+{
+  "stage": "S1",
+  "version": "S1-v1",
+  "primary_statistic": "interaction_required_harm_fraction, per BCI subject",
+  "arms": [
+    "observed",
+    "null x5 (shared-phase randomized donors)",
+    "positive_control (a' = a + beta*x)"
+  ],
+  "null_construction": "rfft along time; one random phase vector shared by all 19 channels; irfft. Preserves the donor covariance matrix exactly, hence p_art and the frozen SNR scaling are unchanged.",
+  "decision_rule_frozen_before_results": {
+    "null_matches_observed": "95% subject-level intervals of observed and null medians overlap -> the cross-term carries no pair-specific information; report the interaction-secondary finding as a quantitative magnitude statement.",
+    "observed_above_null": "alignment structure exists; describe separately.",
+    "observed_below_null": "systematic anti-alignment; describe separately.",
+    "positive_control_must_increase": "interaction_required must increase monotonically in beta; otherwise the measurement instrument is broken and S1 is void."
+  },
+  "data_scope": "BNCI2014_001 0train only; 247 development CHEW donors only.",
+  "seed": 20260813,
+  "n_null_repeats": 5,
+  "posctrl_betas": [
+    0.0,
+    0.25,
+    0.5,
+    1.0
+  ]
+}

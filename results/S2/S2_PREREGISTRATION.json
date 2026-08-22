@@ -1,0 +1,17 @@
+{
+  "stage": "S2",
+  "version": "S2-v1",
+  "question": "Does the interaction-secondary HARM structure survive a Riemannian MDM decoder on the SPD manifold?",
+  "covariance": "SCM, temporal centering, divisor T-1",
+  "rank_handling": "CAR19 leaves a null direction. Project onto a fixed orthonormal basis of the 18-dim complement of the all-ones vector, THEN add ridge once.",
+  "ridge_rule": "eps_fold = 1e-06 * mean(trace(C_train)/18), clean training runs only",
+  "metric": "AIRM for both centroid (Karcher mean) and distance",
+  "clean_validity_gate_frozen_before_contamination": {
+    "rule": "subject enters the primary median only if clean MDM OOF accuracy >= 0.6",
+    "rationale": "fixes the Stage 6 defect where subjects near chance dominated the count"
+  },
+  "primary_reporting": "9 subject values, median, 95% subject-level bootstrap interval",
+  "thresholds": "NOT copied from CSP Stage 5/6; reporting is continuous",
+  "data_scope": "0train only; 247 development donors; artifact subjects 12/14/17/19/23/25 excluded",
+  "seed": 20260813
+}

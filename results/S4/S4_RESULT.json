@@ -1,0 +1,49 @@
+{
+  "stage": "S4",
+  "saturation": [
+    {
+      "group": "CSP+LDA",
+      "n": 9,
+      "spearman_rho": -0.5,
+      "p_value": 0.1704706607870538
+    },
+    {
+      "group": "Riemannian MDM",
+      "n": 9,
+      "spearman_rho": -0.9,
+      "p_value": 0.0009430623223403288
+    },
+    {
+      "group": "оба семейства (n=18)",
+      "n": 18,
+      "spearman_rho": -0.7812177502579979,
+      "p_value": 0.00012936386013196713
+    }
+  ],
+  "cross_decoder_transfer": {
+    "interaction_required_rho": 0.0,
+    "interaction_required_p": 1.0,
+    "harm_rate_rho": 0.39999999999999997
+  },
+  "medians": {
+    "csp_observed": [
+      0.0289108409903745,
+      0.0066860137206845,
+      0.0398408210927416
+    ],
+    "csp_null": [
+      0.028677808949497056,
+      0.006291086165121901,
+      0.03958003176185772
+    ],
+    "mdm": [
+      0.0164165400202634,
+      0.0017738502225375,
+      0.0470067848708625
+    ]
+  },
+  "symmetry": {
+    "CSP+LDA": 0.9873,
+    "Riemannian MDM": 1.5988
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "stage": "S6",
+  "version": "S6-v1",
+  "question": "Does the closed-form law derived on the CSP power decomposition also predict the interaction-required fraction for a Riemannian MDM decoder?",
+  "formula": "predicted = f_m(0) * E[(-I)^+] / P(m < 0)",
+  "fitted_parameters": 0,
+  "unit_of_evaluation": "(bci_subject, snr_level) cell, 9 x 8 = 72 cells per family",
+  "success_criterion_frozen_before_computation": {
+    "primary": "median relative error |predicted - observed| / observed <= 0.20 in the MDM family",
+    "secondary": "Spearman correlation between predicted and observed across all cells of the MDM family >= 0.70",
+    "sanity": "the CSP family must reproduce its known ~4% median relative error; if it does not, the implementation is broken and the run is void"
+  },
+  "interpretation_frozen": {
+    "both_pass": "The law is not specific to the CSP representation. Report it as a predictive relation validated across two decoder families.",
+    "csp_ok_mdm_fails": "The law is specific to the power representation and does not transfer to the Riemannian geometry. Report this as a negative result and as a limitation of the model.",
+    "csp_fails": "Implementation error. Do not interpret anything."
+  },
+  "bandwidth_rule": "h = 2nd percentile of |m| within the cell; sensitivity reported at the 1st and 5th percentiles",
+  "note": "The law itself was devised post-hoc after S1. This cross-family test is preregistered, but the law's origin remains post-hoc and must be stated."
+}

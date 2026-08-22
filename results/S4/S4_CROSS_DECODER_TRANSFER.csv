@@ -1,0 +1,3 @@
+metric,spearman_rho,p_value
+interaction_required_CSP_vs_MDM,0.0,1.0
+harm_rate_CSP_vs_MDM,0.39999999999999997,0.286105101908313

@@ -1,0 +1,37 @@
+{
+  "stage": "S6",
+  "verdict": "LAW_TRANSFERS",
+  "reading": "Формула CSP қуат ыдырауына тән емес. Ол екі декодер тұқымдастығында да, тоғыз сынаушыда да, сегіз контаминация деңгейінде де бапталатын параметрсіз болжам береді. Бұл сипаттама емес, БОЛЖАМДЫҚ ҚАТЫНАС.",
+  "summary": {
+    "CSP+LDA": {
+      "n_cells": 72,
+      "median_rel_err": 0.056630585232322006,
+      "p90_rel_err": 0.20009317939116825,
+      "max_rel_err": 0.4099470982622713,
+      "spearman": 0.9941796900122196,
+      "spearman_p": 1.758605824687194e-69,
+      "median_observed": 0.026065338556040776,
+      "median_predicted": 0.025116590090849836,
+      "median_abs_z": 0.8755372915905443,
+      "frac_within_3sigma": 0.9861111111111112
+    },
+    "Riemannian MDM": {
+      "n_cells": 67,
+      "median_rel_err": 0.14997906682067827,
+      "p90_rel_err": 2.827012975358503,
+      "max_rel_err": 17.07634916355845,
+      "spearman": 0.9872695346795437,
+      "spearman_p": 1.2589065195500553e-53,
+      "median_observed": 0.017900524229638153,
+      "median_predicted": 0.020330331615841413,
+      "median_abs_z": 2.0806620501603295,
+      "frac_within_3sigma": 0.5671641791044776
+    }
+  },
+  "criteria": {
+    "csp_sanity": true,
+    "mdm_error": true,
+    "mdm_spearman": true
+  },
+  "minutes": 2.5974435289700826
+}
