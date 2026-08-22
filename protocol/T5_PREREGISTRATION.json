@@ -1,0 +1,80 @@
+{
+  "stage": "T5",
+  "title": "One-shot confirmation on the 15 locked Cho2017 subjects",
+  "frozen_before": "the locked subjects were loaded, decoded, or contaminated in any way",
+  "seed": 20260813,
+
+  "why_this_file_exists": [
+    "T2_PREREGISTRATION.json sealed 15 subjects and set only the opening",
+    "condition, not the success criteria. Opening them without frozen criteria",
+    "would turn a confirmation into a second development run. The criteria below",
+    "are written from the development result and cannot be edited afterwards."
+  ],
+
+  "one_shot": {
+    "rule": "the stage writes T5_RESULT.json and refuses to run again if that file exists",
+    "precedent": "the same protection as Stage 6 of the BNCI branch; a later RuntimeError about an existing result is the protection working, not a failed experiment"
+  },
+
+  "cohort": {
+    "locked": [8, 15, 16, 17, 24, 28, 30, 36, 42, 43, 45, 46, 48, 51, 52],
+    "eligibility": "unchanged: clean out-of-fold accuracy >= 0.60 AND at least one donor at purity >= 0.90",
+    "decoders": "fitted here by the SAME frozen procedure used for development, five contiguous folds per class, CSP n_components=8 reg=None log=True norm_trace=False transform_into=average_power, LDA solver=lsqr shrinkage=auto. They could not be fitted earlier without touching sealed data."
+  },
+
+  "development_result_these_criteria_are_written_against": {
+    "n_eligible": 19,
+    "arm_A_interaction_required_median": 0.0484,
+    "arm_A_interaction_required_CI": [0.0336, 0.0534],
+    "arm_A_symmetry_median": 0.980,
+    "primary_A_minus_B_symmetry": {"median": 0.0942, "CI": [-0.1392, 0.1844], "wilcoxon_p": 0.4653},
+    "arm_A_pooled_by_snr": {"2": 0.1844, "0": 0.1541, "-2": 0.1130, "-3": 0.0997,
+                            "-4": 0.0852, "-5": 0.0773, "-6": 0.0703, "-7": 0.0572,
+                            "-10": 0.0386, "-15": 0.0192, "-20": 0.0108,
+                            "-25": 0.0058, "-30": 0.0058},
+    "cho_over_bnci_ratio": {"median": 3.54, "sd": 0.27, "range": [3.26, 4.09]}
+  },
+
+  "criteria": {
+    "C0_power": {
+      "test": "at least 6 of the 15 locked subjects pass eligibility",
+      "if_failed": "the confirmation is underpowered; report the count and every criterion below as not evaluable rather than as passed or failed"
+    },
+    "C1_effect_size": {
+      "test": "the locked median arm A interaction-required fraction falls inside the development 95 per cent interval [0.0336, 0.0534]",
+      "note": "this is the strict form. The overlap of the two intervals is reported alongside, because a median from about eight subjects carries its own spread."
+    },
+    "C2_primary_null_replicates": {
+      "test": "the 95 per cent interval of the paired arm A minus arm B symmetry difference contains zero",
+      "reason": "development found no dependence and T3b and T3c found none either; the confirmation is that the null holds, not that an effect appears"
+    },
+    "C3_monotone": {
+      "test": "arm A pooled interaction-required decreases monotonically from -7 dB through -30 dB",
+      "note": "the -25 and -30 points were saturated in development, 3289 versus 3294 harm events with 19 required at both, so they carry almost no information and ties count as satisfying monotonicity"
+    },
+    "C4_law_transfer_out_of_sample": {
+      "test": "across the eight frozen SNR levels, the ratio of the locked Cho curve to the frozen BNCI curve has median inside [2.65, 4.43], which is 3.54 plus or minus 25 per cent, and a relative spread sd/median below 0.25",
+      "reason": "development found that the saturation law keeps its shape and changes only its scale: log-log slopes +0.1390 per dB for BNCI against +0.1299 for Cho, correlation of the log curves 0.9866, ratio 3.54 with sd 0.27 across all eight levels. That was observed, not predicted. Testing it on subjects never opened is the out-of-sample check it has not had.",
+      "provenance": "the ratio was discovered post hoc on the development cohort; only this test on the locked cohort is preregistered"
+    }
+  },
+
+  "bnci_reference_curve": {
+    "source": "Appendix B of the original work, development column",
+    "snr_db": [2, 0, -2, -3, -4, -5, -6, -7],
+    "fraction": [0.0525, 0.0418, 0.0328, 0.0300, 0.0261, 0.0217, 0.0172, 0.0150]
+  },
+
+  "published_regardless_of_outcome": [
+    "every criterion with its number, passed or failed",
+    "clean accuracy of all 15 locked subjects, including those failing eligibility",
+    "the per-subject table, including subjects with a single donor whose counters are noisy",
+    "that arm C did not discriminate in development, and that this is a limitation of the control's design, since matching SNR across arms removes the very difference the control was meant to detect"
+  ],
+
+  "what_a_failure_would_mean": {
+    "C1_fails": "the effect size does not replicate across subject groups; report the two numbers and stop claiming a single cohort-wide value",
+    "C2_fails": "dependence appears in the locked group but not in development, which would contradict T3b and T3c and would need explaining before anything is claimed",
+    "C4_fails": "the law's scale is not stable even within one dataset, and the transfer claim is withdrawn to the development cohort only"
+  }
+}

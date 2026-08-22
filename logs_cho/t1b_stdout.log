@@ -1,0 +1,63 @@
+==========================================================================
+STAGE T1b  identify the jaw slot, then gate
+==========================================================================
+mne 1.12.1   moabb 1.5.0   numpy 2.0.2
+Trials demeaned and stacked with zero buffer to create continuous data -- edge effects present
+
+MOABB reports 68 non-stim channels
+  first 5 : ['Fp1', 'AF7', 'AF3', 'F1', 'F3']
+  last 6  : ['PO4', 'O2', 'EMG1', 'EMG2', 'EMG3', 'EMG4']   <- expect 4 EMG at the tail
+  all 19 COMMON19 present, max index 55 (must be < 64)
+
+--------------------------------------------------------------------------
+PART A  slot identification, five blocks per subject
+--------------------------------------------------------------------------
+
+subject  1   srate 512 Hz   n_blocks 5
+  slot     HF/LF  broad RMS  8-32 RMS  argmax-HF channel
+     0     0.007   8656.240  1537.581  CP4
+     1     0.007   8906.037  1542.876  CP4
+     2     0.007   8693.373  1539.232  CP4
+     3     0.008   8677.879  1565.895  CP4
+     4     0.005   8805.858  1540.162  CP4
+  -> argmax HF/LF is slot 3, top channel CP4  [not temporal, check by hand], 1.08x over runner-up
+
+subject  2   srate 512 Hz   n_blocks 5
+  slot     HF/LF  broad RMS  8-32 RMS  argmax-HF channel
+     0     0.007   7182.326  1261.001  P4
+     1     0.007   7067.223  1238.870  P4
+     2     0.007   7057.562  1251.981  P4
+     3     0.007   6953.794  1241.821  P4
+     4     0.007   7038.346  1250.998  P4
+  -> argmax HF/LF is slot 3, top channel P4  [not temporal, check by hand], 1.00x over runner-up
+
+subject  3   srate 512 Hz   n_blocks 5
+  slot     HF/LF  broad RMS  8-32 RMS  argmax-HF channel
+     0     0.007   5325.255   977.407  AF7
+     1     0.007   5446.882   963.730  AF7
+     2     0.007   5340.923   969.734  AF7
+     3     0.009   5393.932   981.074  AF7
+     4     0.007   5479.014   964.036  AF7
+  -> argmax HF/LF is slot 3, top channel AF7  [FRONTOPOLAR, suspicious], 1.22x over runner-up
+
+subject  4   srate 512 Hz   n_blocks 5
+  slot     HF/LF  broad RMS  8-32 RMS  argmax-HF channel
+     0     0.007   6743.355  1204.877  Cz
+     1     0.007   6755.568  1200.308  Cz
+     2     0.007   6719.991  1204.924  Cz
+     3     0.010   6741.973  1237.556  Cz
+     4     0.007   6707.815  1196.827  Cz
+  -> argmax HF/LF is slot 3, top channel Cz  [not temporal, check by hand], 1.36x over runner-up
+
+subject  5   srate 512 Hz   n_blocks 5
+  slot     HF/LF  broad RMS  8-32 RMS  argmax-HF channel
+     0     0.007  10809.631  1924.135  C2
+     1     0.007  10975.707  1942.769  C2
+     2     0.007  11001.997  1955.638  C2
+     3     0.007  10836.165  1936.021  C2
+     4     0.007  10834.744  1921.708  C2
+  -> argmax HF/LF is slot 3, top channel C2  [not temporal, check by hand], 1.01x over runner-up
+
+--------------------------------------------------------------------------
+slot agreement across subjects : [3]  CONSISTENT
+temporal topography            : 0/5

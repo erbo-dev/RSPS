@@ -1,0 +1,71 @@
+harm engine self test
+  1 SNR convention, max error          : 3.55e-15   OK
+  2 decomposition vs waveform, max rel : 2.60e-15   OK
+  3 fast vs independent loop           : {'eligible': 13392, 'full_harm': 3685, 'interaction_required': 165, 'interaction_prevented': 153}
+                                         {'eligible': 13392, 'full_harm': 3685, 'interaction_required': 165, 'interaction_prevented': 153}   IDENTICAL
+  4 lambda = 0 gives zero harm         : 0   OK
+  5 non-vacuity, harm and required > 0 : 3685 / 165   OK
+      interaction-required fraction    : 0.0448
+  VERDICT: PASS
+
+================================================================================
+STAGE T5  one-shot confirmation on the 15 locked subjects
+preregistration sha256 : bc93057ab09b3fff0561c04164065072b01f453c412187ae60211f9fc553b25d
+================================================================================
+locked subjects loaded: 15
+
+ subj  trials  clean acc  n pure  eligible
+    8     200     0.5400       3        NO
+   15     198     0.7576       3       yes
+   16     199     0.5528       1        NO
+   17     199     0.4975       2        NO
+   24     199     0.6583       3       yes
+   28     199     0.4422       1        NO
+   30     200     0.6750       3       yes
+   36     198     0.7727       1       yes
+   42     200     0.5950       3        NO
+   43     200     0.9950       0        NO
+   45     200     0.5250       0        NO
+   46     239     0.7071       1       yes
+   48     199     0.8492       0        NO
+   51     200     0.6100       2       yes
+   52     200     0.8400       3       yes
+
+eligible: 7/15   (C0 needs >= 6)
+
+ subj  n_i  natSNR |   A frac   A sym |   B sym
+   15    3  -18.30 |   0.0475   1.127 |   1.246
+   24    3  -24.43 |   0.0743   1.152 |   1.077
+   30    3  -15.33 |   0.0336   0.686 |   0.829
+   36    1  -28.40 |   0.0205   1.133 |   0.893
+   46    1  -12.09 |   0.0583   0.836 |   0.812
+   51    2  -14.48 |   0.0300   2.029 |   0.898
+   52    3  -15.23 |   0.0200   1.294 |   0.929
+
+================================================================================
+PREREGISTERED CRITERIA
+================================================================================
+  C0 power, eligible >= 6                : 7/15   PASS
+  C1 arm A fraction in [0.0336, 0.0534] : 0.0336 [0.0205, 0.0583]   FAIL
+  C2 A-B symmetry interval covers zero     : +0.0749 [-0.1193, +0.3655]   PASS
+       Wilcoxon p = 0.2969
+  C3 monotone -7 to -30 dB                 : [0.0421, 0.0408, 0.0207, 0.0105, 0.0009, 0.0]   PASS
+  C4 Cho/BNCI ratio, median in [2.65, 4.43]   : 2.47, sd/median 0.115   FAIL
+
+     SNR    locked      BNCI   ratio
+    +2.0    0.1120    0.0525    2.13
+    +0.0    0.0980    0.0418    2.34
+    -2.0    0.0854    0.0328    2.60
+    -3.0    0.0652    0.0300    2.17
+    -4.0    0.0570    0.0261    2.18
+    -5.0    0.0572    0.0217    2.64
+    -6.0    0.0481    0.0172    2.80
+    -7.0    0.0421    0.0150    2.81
+
+  OVERALL: NOT ALL CRITERIA PASSED
+
+  Publish every line above whatever it says. A failed criterion here is a
+  measurement about how far the development result generalises, and the file
+  that defines these criteria was committed before these subjects were opened.
+
+written: /kaggle/working/T5_RESULT.json   (this stage will now refuse to run again)

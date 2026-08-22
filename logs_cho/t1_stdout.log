@@ -1,0 +1,58 @@
+========================================================================
+STAGE T1  Cho2017 jaw-clench feasibility
+========================================================================
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 837.7/837.7 kB 4.4 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 189.8/189.8 kB 10.9 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.0/8.0 MB 43.5 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 153.6/153.6 kB 10.6 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.1/79.1 kB 5.1 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.0/98.0 kB 6.1 MB/s eta 0:00:00
+Downloading data from 'https://s3.ap-northeast-1.wasabisys.com/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s01.mat' to file '/root/mne_data/MNE-gigadb-data/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s01.mat'.
+mne 1.12.1   moabb 1.5.0   numpy 2.0.2
+
+[PHASE 1] locating raw .mat files via the MOABB downloader
+SHA256 hash of downloaded file: 57f2f10056b3c240adc78324872597d9b06b282df537a7763e98467275efe6db
+Use this value as the 'known_hash' argument of 'pooch.retrieve' to ensure that the file hasn't changed if it is downloaded again in the future.
+Downloading data from 'https://s3.ap-northeast-1.wasabisys.com/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s02.mat' to file '/root/mne_data/MNE-gigadb-data/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s02.mat'.
+  subject  1: /root/mne_data/MNE-gigadb-data/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s01.mat
+SHA256 hash of downloaded file: 1ad1d82d9e409d85d520837377d88a89c086a4f526dba0ce0fe588b6e6e3659e
+Use this value as the 'known_hash' argument of 'pooch.retrieve' to ensure that the file hasn't changed if it is downloaded again in the future.
+Downloading data from 'https://s3.ap-northeast-1.wasabisys.com/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s03.mat' to file '/root/mne_data/MNE-gigadb-data/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s03.mat'.
+  subject  2: /root/mne_data/MNE-gigadb-data/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s02.mat
+SHA256 hash of downloaded file: f2b4e386c501add1bfd5b43767f2d684a7c1fa29f811d3a1876d4e5861377ebc
+Use this value as the 'known_hash' argument of 'pooch.retrieve' to ensure that the file hasn't changed if it is downloaded again in the future.
+Downloading data from 'https://s3.ap-northeast-1.wasabisys.com/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s04.mat' to file '/root/mne_data/MNE-gigadb-data/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s04.mat'.
+  subject  3: /root/mne_data/MNE-gigadb-data/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s03.mat
+SHA256 hash of downloaded file: 9c4e682deb3d60f9b5f3e77d0b369046674a5ecc0db440975c1ca516fd501840
+Use this value as the 'known_hash' argument of 'pooch.retrieve' to ensure that the file hasn't changed if it is downloaded again in the future.
+Downloading data from 'https://s3.ap-northeast-1.wasabisys.com/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s05.mat' to file '/root/mne_data/MNE-gigadb-data/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s05.mat'.
+  subject  4: /root/mne_data/MNE-gigadb-data/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s04.mat
+SHA256 hash of downloaded file: 5d25609b80f2d61c7a0698d9443b236dd369e77b41a15355643b85d97c97d902
+Use this value as the 'known_hash' argument of 'pooch.retrieve' to ensure that the file hasn't changed if it is downloaded again in the future.
+  subject  5: /root/mne_data/MNE-gigadb-data/gigadb-datasets/live/pub/10.5524/100001_101000/100295/mat_data/s05.mat
+
+[PHASE 1] dumping structure of s01.mat
+  top-level keys: ['eeg']
+eeg: struct, fields = ['noise', 'rest', 'srate', 'movement_left', 'movement_right', 'movement_event', 'n_movement_trials', 'imagery_left', 'imagery_right', 'n_imagery_trials', 'frame', 'imagery_event', 'comment', 'subject', 'bad_trial_indices', 'psenloc', 'senloc']
+  noise: cell, shape (5, 1)
+    noise[0]: array, shape (68, 5120), dtype float32
+  rest: array, shape (68, 34048), dtype float32
+  srate: array, shape (1, 1), dtype uint16
+  movement_left: array, shape (68, 71680), dtype float32
+  movement_right: array, shape (68, 71680), dtype float32
+  movement_event: array, shape (1, 71680), dtype uint8
+  n_movement_trials: array, shape (1, 1), dtype uint8
+  imagery_left: array, shape (68, 358400), dtype float32
+  imagery_right: array, shape (68, 358400), dtype float32
+  n_imagery_trials: array, shape (1, 1), dtype uint8
+  frame: array, shape (1, 2), dtype int16
+  imagery_event: array, shape (1, 358400), dtype uint8
+  comment: array, shape (1,), dtype <U34
+  subject: array, shape (1,), dtype <U9
+  bad_trial_indices: struct, fields = ['bad_trial_idx_voltage', 'bad_trial_idx_mi']
+    bad_trial_idx_voltage: cell, shape (1, 2)
+      bad_trial_idx_voltage[0]: array, shape (0, 0), dtype uint8
+    bad_trial_idx_mi: cell, shape (1, 2)
+      bad_trial_idx_mi[0]: array, shape (0, 1), dtype uint8
+  psenloc: array, shape (64, 3), dtype float64
+  senloc: array, shape (64, 3), dtype float64

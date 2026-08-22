@@ -1,0 +1,88 @@
+clean accuracies read from /kaggle/working/T3_RESULT.json
+================================================================================
+STAGE T3d + T3e
+bank: /kaggle/working/cho_bank_v3   purity threshold 0.9 (frozen, not moved)
+PRIMARY COHORT IS THE v3 COUNT. v2 is the sensitivity analysis.
+================================================================================
+
+CAR residual, RELATIVE: median 6.77e-08, max 1.60e-07
+  float32 storage alone accounts for about 1e-7. The absolute tolerance
+  of 1e-3 in harmkit.validate is calibrated for microvolts and does not
+  apply to raw Cho units; use this relative figure instead.
+
+--------------------------------------------------------------------------------
+T3d  NATURAL SNR, safety-band convention, confirmatory subjects
+--------------------------------------------------------------------------------
+     all donor windows: n= 141  median  -12.18 dB   p5  -24.44  p25  -16.87  p75   -7.28  p95   -2.98
+    per-subject median: n=  47  median  -10.79 dB   p5  -23.86  p25  -15.81  p75   -7.80  p95   -3.45
+
+  frozen grid -7 to +2 dB
+    inside   24.1%    harsher  75.9%    milder   0.0%
+
+  RETRACTED value under the wrong convention: -9.52 dB
+  corrected median                           : -10.79 dB
+  shift                                      : -1.27 dB
+
+  Read this before writing. Clean EEG carries far less power at 20-80 Hz than
+  at 8-32 Hz, so the corrected reference is smaller and the corrected SNR is
+  more negative. Whichever way the grid comparison lands, state it plainly:
+  a grid that sits milder than nature makes the headline number an upper
+  bound; a grid that sits harsher means it does not transfer, and section 7
+  already showed the quantity depends on the contamination regime.
+
+--------------------------------------------------------------------------------
+T3e  COHORT RECOUNT, development subjects
+--------------------------------------------------------------------------------
+   subj     acc  pur med  n v2  n v3                 change
+      6  0.6450    0.918     2     2                       
+      7  0.4728    0.773     1     1                       
+      9  0.7292    0.993     3     3                       
+     10  0.8300    0.981     3     3                       
+     11  0.6200    0.354     0     0                       
+     12  0.7600    0.876     1     1                       
+     13  0.5600    0.734     0     0                       
+     14  0.9800    0.990     3     3                       
+     18  0.6800    0.975     3     3                       
+     19  0.5500    0.412     0     0                       
+     20  0.7250    0.812     1     1                       
+     21  0.7337    0.498     0     0                       
+     22  0.7136    0.984     3     3                       
+     23  0.8550    0.982     2     2                       
+     25  0.6935    0.902     1     2                       
+     26  0.6000    0.726     1     1                       
+     27  0.6382    0.903     2     2                       
+     29  0.4850    0.565     0     0                       
+     31  0.7337    0.690     0     1      ENTERS the cohort
+     32  0.5200    0.897     1     1                       
+     33  0.6382    0.957     3     3                       
+     34  0.4300    0.406     0     0                       
+     35  0.7550    0.963     3     3                       
+     37  0.7000    0.935     3     3                       
+     38  0.4600    0.974     3     3                       
+     39  0.7588    0.556     0     0                       
+     40  0.5500    0.998     3     3                       
+     41  0.9196    0.910     1     2                       
+     44  0.6850    0.569     0     0                       
+     47  0.6450    0.989     3     3                       
+     49  0.6850    0.947     2     2                       
+     50  0.5250    0.975     3     3                       
+
+  eligible under v2 (sensitivity) : 18
+  eligible under v3 (PRIMARY)     : 19
+  unchanged 18   entered [31]   left []
+
+    sensitivity, purity >= 0.75: 23 subjects
+    sensitivity, purity >= 0.90: 19 subjects
+    sensitivity, purity >= 0.95: 13 subjects
+
+  What must go in the text, whichever way the count fell:
+    the v3 count as primary, the v2 count beside it, and the reason v3 is
+    primary, namely that purity is now measured on the injected segment;
+    the list of subjects that entered and left, by number;
+    that the 0.90 threshold was not moved.
+
+  If the two counts differ, the decoders do NOT need refitting. Trials were
+  filtered identically in both banks, so T3_MODELS.npz and every clean
+  accuracy remain valid. Only the donor-side membership changed.
+
+written: /kaggle/working/T3de_RESULT.json

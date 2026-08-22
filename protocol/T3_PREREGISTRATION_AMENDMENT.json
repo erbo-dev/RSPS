@@ -1,0 +1,68 @@
+{
+  "stage": "T3-amendment",
+  "amends": "T3_PREREGISTRATION.json, sha256 96c66e2e8f6dd5bdbb8b5e2108d92fd4ea0509c65a3d5a2b9a85c76108701c2d",
+  "written_when": "after the T3 run, before any HARM statistic exists anywhere in the project",
+  "legitimacy": "this amendment is permissible only because no harm statistic has been computed. Every change below is forced by an error or by a fact that the T3 run revealed about the cohort, and each is recorded rather than silently applied.",
+
+  "DEVIATION_1_artifact_only_gate_is_degenerate": {
+    "what_was_frozen": "arm A artifact-only pooled accuracy below 0.55, and arm A not exceeding arm B by more than 0.03",
+    "what_happened": "PASS on both, at 0.4999, 0.5002 and 0.4998 across the three arms",
+    "why_it_is_worthless": "contiguous_folds partitions each class separately, so every fold is class balanced. A donor carries no label and yields one prediction for the whole fold, so the fraction of matching trial labels is exactly one half whatever the prediction is. The gate returns 0.5 algebraically and cannot fail. The residual in the fourth decimal is only the 199-trial subjects not dividing evenly by five.",
+    "why_the_BNCI_version_gave_0.504_instead": "section 6.4 computed the figure on the eligible subset, that is, only on trials whose clean decision was correct. That subset is class imbalanced and imbalanced differently per subject, which is what produced the spread of 0.024. Section 6.4 already warned that the agreement figure is a mechanical consequence of a shared bias direction rather than independent evidence. That warning was more right than it was written to be: the measure is weak in the BNCI branch too.",
+    "resolution": "the artifact-only figure is RETRACTED as a validity gate and RETAINED as a reported number with this mechanism attached. It is not evidence for or against anything in either branch.",
+    "no_repair_is_possible": "the donor has no class and is identical across a subject's trials, so it cannot carry information about a trial's label under any variant of this statistic. The gate is replaced, not fixed."
+  },
+
+  "REPLACEMENT_DIAGNOSTIC_rho": {
+    "quantity": "|rho| between the CSP projections z of the clean trial and u of the donor, per component, per trial-donor pair",
+    "measured_in": "arms A, B and C separately",
+    "scale_invariance": "correlation does not depend on the SNR scaling, so this needs no contamination sweep and no harm statistic",
+    "reference_points_already_in_the_paper": {
+      "cross_subject_regime": 0.036,
+      "level_at_which_the_cross_term_became_visible_in_positive_control_6.2": 0.133
+    },
+    "reading_rules_frozen_now": {
+      "if_arm_A_is_within_0.02_of_arm_B": "the within-subject design introduces no dependence, arm A adds nothing, and that is the finding. It is published as such, not buried.",
+      "if_arm_A_exceeds_arm_B_and_approaches_0.133": "the dependence axis is genuinely opened and the primary endpoint becomes informative",
+      "either_way": "the arm A value is the number limitation 10.3.4 says is unknown for a single person, and reporting it closes that limitation regardless of which way it falls"
+    },
+    "caveat": "z is filtered 8-32 Hz and u 20-80 Hz, so the correlation is carried by the 20-32 Hz overlap. This is the frozen band convention of the study and is stated rather than absorbed."
+  },
+
+  "CORRECTION_1_donor_matching": {
+    "what_was_frozen": "arms B and C subsampled to 3 donors per host",
+    "why_it_is_wrong": "the T3 run showed the number of donors surviving purity >= 0.90 is between 0 and 3, not 3. Of the 18 eligible development subjects, only 9 have all three.",
+    "corrected_rule": "for host i with n_i surviving own donors, arms B and C are subsampled to exactly n_i donors, redrawn 25 times, statistic taken per draw, median reported across draws",
+    "additional_reporting": "the 9 eligible subjects with n_i = 3 are reported as a separate stronger subsample. The primary analysis stays on all 18 under the frozen rule. The subsample is a secondary report and is not substituted for the primary if the primary is less favourable."
+  },
+
+  "VALIDITY_now_carried_by_arm_C_at_the_endpoint": {
+    "principle": "arm C donors are the subject's own resting background with no muscle. If arm A behaves like arm C, the design is injecting background rather than muscle.",
+    "reading_rules_frozen_now": {
+      "A_differs_from_B_and_from_C": "within-subject dependence is real and is not explained by background; the strongest outcome",
+      "A_differs_from_C_but_not_from_B": "the donor is muscle, but being the same person adds no dependence; the cross-subject conclusion of the original work extends to the within-subject regime",
+      "A_does_not_differ_from_C": "arm A is injecting background, arm A is withdrawn the way the synthetic EMG branch was withdrawn in section 9.3",
+      "no_p_value_threshold_is_set_for_this_control": "with 18 subjects a null result here would be as consistent with low power as with equivalence, so the comparison is reported with its effect size and confidence interval and read alongside rho, not as a pass or fail"
+    }
+  },
+
+  "COHORT_as_measured_by_T3": {
+    "development_analysed": 32,
+    "eligible_clean_accuracy_and_purity": 18,
+    "clean_accuracy_median": 0.6825,
+    "clean_accuracy_range": [0.43, 0.98],
+    "sensitivity": {"purity_0.75": 22, "purity_0.90": 18, "purity_0.95": 14},
+    "note": "14 of 32 fail the frozen 0.60 accuracy rule. That is expected for Cho2017 and is reported. The threshold is not moved."
+  },
+
+  "unchanged": [
+    "imagery window 0.5 to 3.0 s",
+    "five contiguous folds and the frozen fold models in T3_MODELS.npz, which T4 loads and never refits",
+    "purity threshold 0.90 with sensitivity at 0.75 and 0.95",
+    "clean accuracy eligibility 0.60",
+    "SNR grid, its extension, and the per-subject natural point",
+    "the numeric saturation prediction: interaction-required below 0.015 at -15 dB, monotone decrease from -7 to -30 dB",
+    "primary endpoint: symmetry ratio, arm A versus arm B, paired Wilcoxon",
+    "the 15 locked subjects stay sealed"
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "stage": "T3",
+  "reconstructed": true,
+  "reconstruction_note": "The original T3_RESULT.json was lost when a Kaggle session dropped. This file is reconstructed from the saved notebook output of stage_resume_rebuild.py, which refitted the same frozen decoders and printed the same per-subject table, combined with the n_pure column printed by the original stage_t3_decoders.py run. It is byte-for-byte equivalent in content but was not written by the stage itself. Rerunning stage_t3_decoders.py on cho_bank_v3 regenerates the authoritative file.",
+  "prereg_sha256": "96c66e2e8f6dd5bdbb8b5e2108d92fd4ea0509c65a3d5a2b9a85c76108701c2d",
+  "window_s": [
+    0.5,
+    3.0
+  ],
+  "n_folds": 5,
+  "purity_threshold": 0.9,
+  "clean_acc_min": 0.6,
+  "subjects": [
+    {
+      "subject": 6,
+      "clean_acc": 0.645,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 2
+    },
+    {
+      "subject": 7,
+      "clean_acc": 0.4728,
+      "eligible": false,
+      "n": 239,
+      "n_pure": 1
+    },
+    {
+      "subject": 9,
+      "clean_acc": 0.7292,
+      "eligible": true,
+      "n": 240,
+      "n_pure": 3
+    },
+    {
+      "subject": 10,
+      "clean_acc": 0.83,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 3
+    },
+    {
+      "subject": 11,
+      "clean_acc": 0.62,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 0
+    },
+    {
+      "subject": 12,
+      "clean_acc": 0.76,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 1
+    },
+    {
+      "subject": 13,
+      "clean_acc": 0.56,
+      "eligible": false,
+      "n": 200,
+      "n_pure": 0
+    },
+    {
+      "subject": 14,
+      "clean_acc": 0.98,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 3
+    },
+    {
+      "subject": 18,
+      "clean_acc": 0.68,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 3
+    },
+    {
+      "subject": 19,
+      "clean_acc": 0.55,
+      "eligible": false,
+      "n": 200,
+      "n_pure": 0
+    },
+    {
+      "subject": 20,
+      "clean_acc": 0.725,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 1
+    },
+    {
+      "subject": 21,
+      "clean_acc": 0.7337,
+      "eligible": true,
+      "n": 199,
+      "n_pure": 0
+    },
+    {
+      "subject": 22,
+      "clean_acc": 0.7136,
+      "eligible": true,
+      "n": 199,
+      "n_pure": 3
+    },
+    {
+      "subject": 23,
+      "clean_acc": 0.855,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 2
+    },
+    {
+      "subject": 25,
+      "clean_acc": 0.6935,
+      "eligible": true,
+      "n": 199,
+      "n_pure": 1
+    },
+    {
+      "subject": 26,
+      "clean_acc": 0.6,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 1
+    },
+    {
+      "subject": 27,
+      "clean_acc": 0.6382,
+      "eligible": true,
+      "n": 199,
+      "n_pure": 2
+    },
+    {
+      "subject": 29,
+      "clean_acc": 0.485,
+      "eligible": false,
+      "n": 200,
+      "n_pure": 0
+    },
+    {
+      "subject": 31,
+      "clean_acc": 0.7337,
+      "eligible": true,
+      "n": 199,
+      "n_pure": 0
+    },
+    {
+      "subject": 32,
+      "clean_acc": 0.52,
+      "eligible": false,
+      "n": 200,
+      "n_pure": 1
+    },
+    {
+      "subject": 33,
+      "clean_acc": 0.6382,
+      "eligible": true,
+      "n": 199,
+      "n_pure": 3
+    },
+    {
+      "subject": 34,
+      "clean_acc": 0.43,
+      "eligible": false,
+      "n": 200,
+      "n_pure": 0
+    },
+    {
+      "subject": 35,
+      "clean_acc": 0.755,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 3
+    },
+    {
+      "subject": 37,
+      "clean_acc": 0.7,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 3
+    },
+    {
+      "subject": 38,
+      "clean_acc": 0.46,
+      "eligible": false,
+      "n": 200,
+      "n_pure": 3
+    },
+    {
+      "subject": 39,
+      "clean_acc": 0.7588,
+      "eligible": true,
+      "n": 199,
+      "n_pure": 0
+    },
+    {
+      "subject": 40,
+      "clean_acc": 0.55,
+      "eligible": false,
+      "n": 200,
+      "n_pure": 3
+    },
+    {
+      "subject": 41,
+      "clean_acc": 0.9196,
+      "eligible": true,
+      "n": 199,
+      "n_pure": 1
+    },
+    {
+      "subject": 44,
+      "clean_acc": 0.685,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 0
+    },
+    {
+      "subject": 47,
+      "clean_acc": 0.645,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 3
+    },
+    {
+      "subject": 49,
+      "clean_acc": 0.685,
+      "eligible": true,
+      "n": 200,
+      "n_pure": 2
+    },
+    {
+      "subject": 50,
+      "clean_acc": 0.525,
+      "eligible": false,
+      "n": 200,
+      "n_pure": 3
+    }
+  ],
+  "n_eligible_v2": 18,
+  "n_eligible_v3_primary": 19,
+  "artifact_only": {
+    "arm_A": 0.4999,
+    "arm_B": 0.5002,
+    "arm_C": 0.4998,
+    "A_minus_B": -0.0004,
+    "gate_pooled": true,
+    "gate_between": true,
+    "RETRACTED": "See protocol/LEDGER_CHO.md R5. The gate is algebraically pinned to 0.5 because folds are class balanced and a donor yields one prediction per fold. Reported as a number, not as evidence."
+  },
+  "directional_bias_median": 0.767
+}

@@ -1,0 +1,77 @@
+==============================================================================
+STAGE T3c  surrogate floor for |rho|
+amendment sha256 : ade755e89aa0767e9060d69d68f85ed38ff682e7919aa2d74fd8daba6db2693b
+==============================================================================
+eligible by the frozen clean-accuracy rule: 23 subjects
+surrogate covariance preservation, max relative error : 5.00e-16
+
+subjects with >= 1 donor at purity >= 0.9: 23
+------------------------------------------------------------------------------
+ subj  elig  n_i |   A obs  A surr    A exc |    B exc   C obs  C surr    C exc
+------------------------------------------------------------------------------
+    6     y    2 |  0.0272  0.0266  +0.0006 |  -0.0001  0.0307  0.0305  +0.0002
+    7     n    1 |  0.0235  0.0242  -0.0007 |  +0.0003  0.0307  0.0301  +0.0006
+    9     y    3 |  0.0216  0.0220  -0.0004 |  -0.0008  0.0320  0.0324  -0.0003
+   10     y    3 |  0.0198  0.0199  -0.0001 |  +0.0002  0.0302  0.0302  +0.0001
+   12     y    1 |  0.0224  0.0217  +0.0007 |  -0.0006  0.0318  0.0316  +0.0002
+   14     y    3 |  0.0231  0.0236  -0.0004 |  +0.0001  0.0355  0.0360  -0.0005
+   18     y    3 |  0.0231  0.0239  -0.0008 |  -0.0001  0.0297  0.0300  -0.0003
+   20     y    1 |  0.0217  0.0211  +0.0007 |  -0.0004  0.0311  0.0311  +0.0000
+   22     y    3 |  0.0207  0.0203  +0.0004 |  -0.0005  0.0281  0.0286  -0.0004
+   23     y    2 |  0.0199  0.0198  +0.0001 |  -0.0003  0.0319  0.0324  -0.0005
+   25     y    1 |  0.0190  0.0204  -0.0014 |  +0.0000  0.0295  0.0293  +0.0002
+   26     y    1 |  0.0308  0.0323  -0.0016 |  -0.0007  0.0306  0.0301  +0.0005
+   27     y    2 |  0.0345  0.0346  -0.0001 |  -0.0017  0.0362  0.0361  +0.0001
+   32     n    1 |  0.0297  0.0291  +0.0006 |  +0.0005  0.0307  0.0310  -0.0003
+   33     y    3 |  0.0233  0.0242  -0.0009 |  -0.0004  0.0345  0.0339  +0.0006
+   35     y    3 |  0.0271  0.0270  +0.0001 |  +0.0004  0.0388  0.0385  +0.0003
+   37     y    3 |  0.0271  0.0273  -0.0002 |  -0.0001  0.0325  0.0324  +0.0001
+   38     n    3 |  0.0207  0.0210  -0.0003 |  -0.0004  0.0323  0.0328  -0.0005
+   40     n    3 |  0.0194  0.0199  -0.0004 |  -0.0001  0.0294  0.0300  -0.0006
+   41     y    1 |  0.0270  0.0272  -0.0002 |  +0.0000  0.0287  0.0289  -0.0002
+   47     y    3 |  0.0202  0.0201  +0.0000 |  -0.0003  0.0275  0.0274  +0.0000
+   49     y    2 |  0.0264  0.0261  +0.0003 |  +0.0003  0.0311  0.0309  +0.0001
+   50     n    3 |  0.0237  0.0234  +0.0002 |  +0.0000  0.0284  0.0282  +0.0002
+
+==============================================================================
+RESULT
+==============================================================================
+
+  primary, 18 eligible  (n = 18)
+    arm A: observed 0.0231  floor 0.0237  excess -0.0001  95% CI [-0.0004, +0.0002]
+    arm B: observed 0.0225  floor 0.0226  excess -0.0002  95% CI [-0.0005, +0.0000]
+    arm C: observed 0.0311  floor 0.0310  excess +0.0001  95% CI [-0.0003, +0.0002]
+    A excess minus B excess: -0.0000  95% CI [-0.0004, +0.0006]
+    Wilcoxon on that difference: p = 0.7019
+
+  supplement, all  (n = 23)
+    arm A: observed 0.0231  floor 0.0236  excess -0.0001  95% CI [-0.0004, +0.0001]
+    arm B: observed 0.0230  floor 0.0228  excess -0.0001  95% CI [-0.0004, +0.0000]
+    arm C: observed 0.0307  floor 0.0309  excess +0.0001  95% CI [-0.0003, +0.0002]
+    A excess minus B excess: +0.0000  95% CI [-0.0004, +0.0003]
+    Wilcoxon on that difference: p = 0.9406
+
+  How to read this, per the frozen rule:
+
+  All three excesses within noise of zero
+      no arm carries dependence. The independence assumption of the original
+      work holds in the within-subject regime too, and that is the finding.
+      Publish it as the headline of this branch.
+
+  Arm A excess above arm B excess
+      within-subject dependence exists and the difference quantifies it.
+
+  Arm C floor above arms A and B while its excess is not
+      confirms the arm C gap seen in 23 of 23 subjects was the spectral floor
+      of a tilted donor, not dependence, and clears arm C for use as the
+      background control in T4.
+
+  No threshold is set. With 18 subjects a null here is as consistent with low
+  power as with equivalence, so the intervals are the result, not a verdict.
+
+  Only the excess may be compared with anything outside this branch. The raw
+  |rho| may not: 0.036 came from 4 s BNCI epochs with a different donor
+  spectrum, and 0.133 came from a positive control with clean signal mixed in
+  on purpose. Both are retracted from the reading rule.
+
+written: /kaggle/working/T3c_SURROGATE_FLOOR.json
