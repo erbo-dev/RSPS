@@ -1,0 +1,103 @@
+{
+  "stage": "T3",
+  "title": "Cho2017 within-subject branch: decoders, eligibility, validity gates, and the frozen rules for the T4 harm sweep",
+  "frozen_before": "any clean decoder accuracy, any artifact-only accuracy, and any HARM statistic whatsoever",
+  "supersedes_nothing": "T2_PREREGISTRATION.json stays valid; MI_d >= 3.0 remains the feasibility gate and its 45/47 result stands",
+  "bank": "cho_bank_v2 only. cho_bank v1 is void: resample_poly zero-padding rang off a residual per-channel DC of median 135158 and the donor waveforms were dominated by that ringing.",
+  "seed": 20260813,
+
+  "analysis_window": {
+    "imagery_window_s": [0.5, 3.0],
+    "length_samples_at_250hz": 625,
+    "reason": "the trial spans -2000 to 5000 ms around the cue and the instructed imagery period is 0 to 3 s; the first 0.5 s is dropped because event-related desynchronisation does not develop instantly, and the window ends where the instructed imagery ends rather than running into the blank screen",
+    "donor_cut": "central 625 samples of each stored 3 s donor window, so host and donor are the same length; the donor is already filtered, so cutting inward introduces no edge",
+    "chosen_before": "any decoder was fitted on this dataset"
+  },
+
+  "cross_validation": {
+    "scheme": "5 contiguous folds over the trial sequence, per subject, per class",
+    "reason": "Cho2017 does not expose run boundaries, so leave-one-run-out is unavailable; contiguous folds approximate the run structure and avoid the temporal leakage that random folds would introduce",
+    "guarantee": "every decision in T4 is taken by the fold model that did not see that trial, matching the discipline of the BNCI branch",
+    "decoder": "CSP n_components=8, reg=None, log=True, norm_trace=False, transform_into=average_power; LDA solver=lsqr, shrinkage=auto"
+  },
+
+  "donor_purity_threshold": {
+    "primary": 0.90,
+    "definition": "purity = 1 - P_20_80(subject's median resting window) / P_20_80(donor window)",
+    "interpretation": "at most 10 per cent of the injected power is the subject's own background",
+    "reason_for_using_purity_not_MI_d": "purity is defined in the band that is actually injected; MI_d is defined in 40-100 Hz where nothing is injected. Per-window Spearman between them is +0.968, so they rank the same donors, but only purity carries a direct interpretation.",
+    "sensitivity_analysis": [0.75, 0.90, 0.95],
+    "lower_bound_caveat": "purity is a LOWER bound on the muscle fraction, not an estimate, because alpha and beta are higher at rest than during any task, so the subtracted background is overstated",
+    "DEVIATION_DECLARED": "the purity distribution of the 47 confirmatory subjects was visible in the T2c output before this threshold was set. That is a departure from ideal blinding. Mitigations: the threshold is justified physically and independently of that distribution; the 15 locked subjects have been used for nothing and stay sealed; results are reported at all three thresholds."
+  },
+
+  "eligibility": {
+    "clean_accuracy_min": 0.60,
+    "reason": "the same rule already frozen in the BNCI branch; a decision flip on a decoder at chance means nothing",
+    "applied_to": "out-of-fold clean accuracy on the frozen imagery window"
+  },
+
+  "cohort": {
+    "analysed_in_T3": "development, 32 subjects",
+    "sealed": "locked, 15 subjects, opened once after the development analysis has been run and written",
+    "pilot": "subjects 1-5, reported separately, excluded from every confirmatory count"
+  },
+
+  "arms": {
+    "A_within": "donor = subject i's own jaw windows, host = subject i",
+    "B_between": "donor = jaw windows from subjects other than i, host = subject i",
+    "C_rest": "donor = subject i's own resting windows, host = subject i",
+    "donor_matching": "arms B and C are subsampled to the same number of donors per host as arm A, redrawn 25 times, statistic taken per draw and the median reported across draws; without this the comparison is a comparison of counting noise",
+    "arm_A_ceiling": "3 donors per host, imposed by the 10 s length of the jaw block, and nothing can be done about it"
+  },
+
+  "primary_endpoint": {
+    "statistic": "symmetry ratio, interaction-prevented over interaction-required",
+    "comparison": "arm A versus arm B, paired by subject, Wilcoxon signed rank",
+    "reason": "simulation under a linear dependence model shows the interaction-required fraction moves by a few per cent when the cross-term correlates with the margin, while the symmetry ratio moves from 0.98 to 0.68 over the same range; the fraction is nearly blind to dependence and the symmetry ratio is not",
+    "simulation_caveat": "that simulation assumed one specific dependence model and is a hypothesis about the sensitivity of the two statistics, not a measured property of these data"
+  },
+
+  "secondary_endpoints": [
+    "interaction-required fraction, per arm",
+    "measured |rho| between the CSP projections z and u in arm A, which is the number that limitation 10.3.4 currently lacks",
+    "arm C versus arm A, to show the effect is muscle and not the subject's own background"
+  ],
+
+  "validity_gates_run_before_any_endpoint_is_read": {
+    "artifact_only_pooled": {
+      "threshold": 0.55,
+      "rule": "decoder fed the scaled donor alone, no clean EEG; pooled over all trial-donor pairs in the arm",
+      "consequence_if_failed": "arm A is void and is withdrawn, exactly as the synthetic EMG branch was withdrawn in section 9.3"
+    },
+    "artifact_only_A_versus_B": {
+      "rule": "artifact-only accuracy in arm A must not exceed arm B by more than 0.03",
+      "reason": "arm A donors contain the subject's own background and the decoder was trained on that subject; this is the sharp test for own-background leakage and the BNCI branch could not run it",
+      "consequence_if_failed": "same as above"
+    },
+    "directional_bias": "reported, never used as evidence; section 6.4 already showed the agreement figure is a mechanical consequence of a shared bias direction"
+  },
+
+  "snr_grid_db": {
+    "original_eight": [2, 0, -2, -3, -4, -5, -6, -7],
+    "extension": [-10, -15, -20, -25, -30],
+    "per_subject_natural_point": "each donor additionally scaled to that subject's own measured natural SNR",
+    "reason_for_extension": "the natural SNR measured on 47 subjects has median -9.52 dB and spans -32.42 to +4.15 dB, so only 15 of 47 fall inside the original grid and 30 fall harsher than it; the original eight are kept unchanged so the BNCI comparison stays exact",
+    "natural_snr_convention": "clean RMS is the per-subject median over the frozen imagery window in 8-32 Hz, donor RMS is in 20-80 Hz; this is per-subject, unlike the single scalar clean reference used in the BNCI branch, and the difference is stated rather than absorbed"
+  },
+
+  "numeric_prediction_frozen_before_the_run": {
+    "basis": "the saturation law of section 7, fitted only over +2 to -7 dB, where interaction-required falls from 0.0525 to 0.0150",
+    "prediction_1": "interaction-required at -15 dB is below 0.015",
+    "prediction_2": "interaction-required decreases monotonically from -7 dB through -30 dB",
+    "why_this_matters": "these are extrapolations outside the range the law was derived on, they cost no extra computation, and a confirmed out-of-range prediction is far stronger evidence than any in-range fit",
+    "if_refuted": "published as a bound on the law's domain, not deleted"
+  },
+
+  "published_regardless_of_outcome": [
+    "clean accuracy of every subject, including those failing eligibility",
+    "both validity gates with their numbers",
+    "the saturation prediction and whether it held",
+    "the purity threshold deviation stated above"
+  ]
+}

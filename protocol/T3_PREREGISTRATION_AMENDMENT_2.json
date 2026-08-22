@@ -1,0 +1,70 @@
+{
+  "stage": "T3-amendment-2",
+  "amends": [
+    "T3_PREREGISTRATION.json, sha256 96c66e2e8f6dd5bdbb8b5e2108d92fd4ea0509c65a3d5a2b9a85c76108701c2d",
+    "T3_PREREGISTRATION_AMENDMENT.json, sha256 f1dd23950890bc21b17419246c4b3d6fae09fea5f536993b5eefc5559d2556ec"
+  ],
+  "written_when": "after the T3b run, before any HARM statistic exists anywhere in the project",
+  "legitimacy": "still permissible for the same reason as the first amendment: no harm statistic exists. Every item below is forced by an error in the previous amendment or by a fact the T3b run revealed.",
+
+  "DEVIATION_2_cross_scale_rho_comparisons_retracted": {
+    "what_the_previous_amendment_said": "read arm A against the 0.036 of the cross-subject regime and against the 0.133 at which the positive control of section 6.2 saw the cross-term become visible",
+    "why_that_is_wrong": "|rho| has a floor set by the finite window and by the spectral shape of the donor. The numerator lives only in the 20-32 Hz overlap of the 8-32 Hz clean band and the 20-80 Hz donor band, while the denominator uses each signal's full norm. A donor with a 1/f tilt puts more of its norm inside the overlap than a flat broadband donor does, so it sits at a higher floor without being any more dependent.",
+    "numerical_confirmation": {
+      "setup": "independent synthetic signals, 625 samples, 2.5 s at 250 Hz, 4000 draws, clean band 8-32 Hz",
+      "flat_donor_20_80_muscle_like": 0.0169,
+      "one_over_f_donor_20_80_background_like": 0.0272,
+      "observed_arm_A_jaw": 0.0231,
+      "observed_arm_C_rest": 0.0307,
+      "reading": "the simulated gap of 0.010 reproduces the observed gap of 0.008, so the arm C excess seen in 23 of 23 subjects is the chance floor of a tilted donor spectrum and not dependence"
+    },
+    "why_the_paper_numbers_are_not_comparable": "0.036 came from 4 s BNCI epochs with PhysioMotion donors, a different window length and a different donor spectrum. 0.133 came from a positive control in which clean signal was deliberately mixed into the donor, a different construction entirely. Neither shares a scale with the 2.5 s Cho measurement.",
+    "resolution": "both comparisons are RETRACTED from the reading rule. They must not appear in the write-up."
+  },
+
+  "WHAT_SURVIVES_UNCHANGED": {
+    "arm_A_versus_arm_B": "this comparison is self-calibrating and stands. Arm B is the empirical null: same donor spectrum, same window, same band, same filter, independent by construction, differing from arm A only in whether the donor is the host's own.",
+    "result": {
+      "all_23_as_run": {"median_A_minus_B": 0.00010, "wilcoxon_p": 0.927, "n": 23},
+      "18_eligible_only": {"median_A_minus_B": 0.00030, "wilcoxon_p": 0.711, "n": 18}
+    },
+    "conclusion": "recording the donor from the same person in the same session introduces no measurable dependence between the clean signal and the artifact. This is the measurement that limitation 10.3.4 says is unavailable, and it is null."
+  },
+
+  "DEVIATION_3_cohort_used_by_T3b": {
+    "what_happened": "T3b filtered on donor purity only and did not apply the frozen clean-accuracy eligibility of 0.60, so it ran on 23 subjects rather than the 18 eligible ones",
+    "assessment": "|rho| is a property of the signals and does not depend on decoding quality, so including ineligible subjects is defensible, but it was not what was frozen",
+    "resolution": "both are published. The 18 eligible subjects are the primary figure under the frozen rule; the 23 are reported as a supplement with this explanation. The conclusion is identical either way."
+  },
+
+  "SUPPORTING_OBSERVATION_counting_noise": {
+    "median_absolute_A_minus_B_by_donor_count": {"n_i_1": 0.00300, "n_i_2": 0.00410, "n_i_3": 0.00135},
+    "reading": "subjects with the full three donors give A minus B values roughly three times tighter than subjects with one. The spread behaves as counting noise, which is independent support for the donor-matching rule rather than a finding about dependence."
+  },
+
+  "NEW_REQUIREMENT_surrogate_floor": {
+    "arm_S": "phase-randomised surrogate of each donor, using the machinery of section 6.1, which preserves the donor covariance exactly, verified there to 1.3e-15",
+    "purpose": "a surrogate carries the donor's spectrum and none of its dependence, so |rho| against it is the chance floor for that exact donor spectrum, that window and that band",
+    "reported_quantity": "excess = median |rho| observed minus median |rho| surrogate, per arm, per subject",
+    "consequence_for_arm_C": "the arm A versus arm C comparison at the endpoint level in T4 is confounded by the spectral floor and may only be read after the surrogate excess has been subtracted",
+    "consequence_for_the_write_up": "the excess, not the raw |rho|, is what may be compared with anything outside this branch",
+    "reading_rule_frozen_now": {
+      "if_all_three_excesses_are_within_noise_of_zero": "no arm carries dependence, the independence assumption of the original work holds in the within-subject regime as well, and that is the finding",
+      "if_arm_A_excess_exceeds_arm_B_excess": "within-subject dependence exists and is quantified by the difference",
+      "no_threshold_is_set": "with 18 subjects a null here is as consistent with low power as with equivalence, so effect sizes and intervals are reported rather than a pass or fail"
+    }
+  },
+
+  "unchanged": [
+    "imagery window 0.5 to 3.0 s",
+    "the frozen fold models in T3_MODELS.npz, loaded and never refitted",
+    "purity threshold 0.90 with sensitivity at 0.75 and 0.95",
+    "clean accuracy eligibility 0.60, and the 14 of 32 subjects it excludes",
+    "donor matching at n_i per host, corrected in the first amendment",
+    "SNR grid, its extension, and the per-subject natural point",
+    "the numeric saturation prediction: interaction-required below 0.015 at -15 dB, monotone decrease from -7 to -30 dB",
+    "primary endpoint: symmetry ratio, arm A versus arm B, paired Wilcoxon",
+    "the 15 locked subjects stay sealed",
+    "the artifact-only figure stays retracted as a gate and reported as a number"
+  ]
+}
