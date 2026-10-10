@@ -1,0 +1,448 @@
+{
+  "status": "completed_exploratory",
+  "seed": 20261010,
+  "host_subjects": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "donor_subjects": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "n_donors": 12,
+  "n_unique_evaluation_pairs": 77760,
+  "snr_db": [
+    2.0,
+    0.0,
+    -3.0,
+    -7.0,
+    -15.0
+  ],
+  "exact_power_check_max_error": 2.0196576083195395e-15,
+  "original_donor_rms_max_relative_drift": 0.0004877978523137693,
+  "clean_guard": [
+    {
+      "subject": 1,
+      "standard_oof_accuracy": 0.8402777777777778,
+      "original_ledger": 0.840278,
+      "ledger_delta": -2.2222222217926912e-07
+    },
+    {
+      "subject": 2,
+      "standard_oof_accuracy": 0.5625,
+      "original_ledger": 0.5625,
+      "ledger_delta": 0.0
+    },
+    {
+      "subject": 3,
+      "standard_oof_accuracy": 0.9513888888888888,
+      "original_ledger": 0.951389,
+      "ledger_delta": -1.1111111120065686e-07
+    },
+    {
+      "subject": 4,
+      "standard_oof_accuracy": 0.7569444444444444,
+      "original_ledger": 0.756944,
+      "ledger_delta": 4.4444444446956055e-07
+    },
+    {
+      "subject": 5,
+      "standard_oof_accuracy": 0.5486111111111112,
+      "original_ledger": 0.548611,
+      "ledger_delta": 1.1111111120065686e-07
+    },
+    {
+      "subject": 6,
+      "standard_oof_accuracy": 0.7152777777777778,
+      "original_ledger": 0.715278,
+      "ledger_delta": -2.2222222217926912e-07
+    },
+    {
+      "subject": 7,
+      "standard_oof_accuracy": 0.7152777777777778,
+      "original_ledger": 0.715278,
+      "ledger_delta": -2.2222222217926912e-07
+    },
+    {
+      "subject": 8,
+      "standard_oof_accuracy": 0.9861111111111112,
+      "original_ledger": 0.986111,
+      "ledger_delta": 1.1111111120065686e-07
+    },
+    {
+      "subject": 9,
+      "standard_oof_accuracy": 0.7847222222222222,
+      "original_ledger": 0.784722,
+      "ledger_delta": 2.2222222217926912e-07
+    }
+  ],
+  "comparisons": [
+    {
+      "method": "lr_confidence_high",
+      "baseline": "margin",
+      "scope": "all",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        -0.007073045267489697,
+        -0.004501028806584317,
+        -0.001286008230452662,
+        -0.00694444444444442,
+        -0.003600823045267487,
+        -0.0030864197530864335,
+        0.00462962962962965,
+        -0.004501028806584373,
+        -0.007973251028806583
+      ],
+      "mean_difference": -0.0038151577503429245,
+      "ci95": [
+        -0.005915637860082281,
+        -0.0012145633287608414
+      ],
+      "subjects_improved": 8,
+      "wilcoxon_p": 0.0546875
+    },
+    {
+      "method": "lr_confidence_high",
+      "baseline": "margin",
+      "scope": "-15",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        0.0025542784163473664,
+        0.0019157088122605526,
+        -0.0006385696040868138,
+        0.0019157088122605526,
+        0.0025542784163473664,
+        0.0031928480204342358,
+        0.0038314176245210496,
+        0.0025542784163473664,
+        0.0012771392081736832
+      ],
+      "mean_difference": 0.002128565346956151,
+      "ci95": [
+        0.0012771392081737016,
+        0.002838087129274864
+      ],
+      "subjects_improved": 1,
+      "wilcoxon_p": 0.0078125
+    },
+    {
+      "method": "estimated_power_risk",
+      "baseline": "margin",
+      "scope": "all",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        -0.005015432098765427,
+        -0.0016718106995884385,
+        -0.015560699588477389,
+        -0.005787037037037035,
+        -0.0003858024691357764,
+        0.0018004115226337158,
+        0.0018004115226337714,
+        -0.006558641975308643,
+        -0.016718106995884774
+      ],
+      "mean_difference": -0.0053440786465477775,
+      "ci95": [
+        -0.009716506630086878,
+        -0.0014146090534979331
+      ],
+      "subjects_improved": 7,
+      "wilcoxon_p": 0.07421875
+    },
+    {
+      "method": "estimated_power_risk",
+      "baseline": "margin",
+      "scope": "-15",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        0.01979565772669223,
+        0.005108556832694733,
+        0.010217113665389521,
+        0.009578544061302707,
+        0.005108556832694733,
+        0.0063856960408684715,
+        0.001915708812260497,
+        0.021711366538952726,
+        0.017241379310344807
+      ],
+      "mean_difference": 0.010784731091244492,
+      "ci95": [
+        0.006598552575564052,
+        0.015396622676316153
+      ],
+      "subjects_improved": 0,
+      "wilcoxon_p": 0.00390625
+    },
+    {
+      "method": "estimated_power_risk",
+      "baseline": "lr_confidence_high",
+      "scope": "all",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        0.0020576131687242705,
+        0.002829218106995879,
+        -0.014274691358024727,
+        0.0011574074074073848,
+        0.0032150205761317108,
+        0.004886831275720149,
+        -0.002829218106995879,
+        -0.0020576131687242705,
+        -0.008744855967078191
+      ],
+      "mean_difference": -0.0015289208962048525,
+      "ci95": [
+        -0.00568701417466851,
+        0.0019433013260173758
+      ],
+      "subjects_improved": 4,
+      "wilcoxon_p": 0.89453125
+    },
+    {
+      "method": "estimated_power_risk",
+      "baseline": "lr_confidence_high",
+      "scope": "-15",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        0.017241379310344862,
+        0.0031928480204341803,
+        0.010855683269476335,
+        0.007662835249042155,
+        0.0025542784163473664,
+        0.0031928480204342358,
+        -0.0019157088122605526,
+        0.01915708812260536,
+        0.015964240102171123
+      ],
+      "mean_difference": 0.00865616574428834,
+      "ci95": [
+        0.004115226337448547,
+        0.013409961685823745
+      ],
+      "subjects_improved": 1,
+      "wilcoxon_p": 0.0078125
+    },
+    {
+      "method": "oracle_power_risk",
+      "baseline": "margin",
+      "scope": "all",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        -0.03202160493827161,
+        -0.005144032921810704,
+        -0.041923868312757184,
+        -0.016718106995884774,
+        -0.0019290123456789932,
+        -0.012474279835390956,
+        -0.007973251028806583,
+        -0.048868312757201646,
+        -0.025720164609053464
+      ],
+      "mean_difference": -0.021419181527206215,
+      "ci95": [
+        -0.03212162780064014,
+        -0.01145940500685871
+      ],
+      "subjects_improved": 9,
+      "wilcoxon_p": 0.00390625
+    },
+    {
+      "method": "oracle_power_risk",
+      "baseline": "margin",
+      "scope": "-15",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        0.0031928480204342358,
+        0.0019157088122605526,
+        -0.007024265644955285,
+        0.007662835249042155,
+        0.010217113665389521,
+        -0.0025542784163473664,
+        -0.0006385696040868694,
+        -0.027458492975734383,
+        0.012771392081736888
+      ],
+      "mean_difference": -0.00021285653469561695,
+      "ci95": [
+        -0.00837413083581667,
+        0.006172839506172836
+      ],
+      "subjects_improved": 4,
+      "wilcoxon_p": 0.65234375
+    },
+    {
+      "method": "oracle_power_risk",
+      "baseline": "lr_confidence_high",
+      "scope": "all",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        -0.02494855967078191,
+        -0.0006430041152263866,
+        -0.04063786008230452,
+        -0.009773662551440354,
+        0.001671810699588494,
+        -0.009387860082304522,
+        -0.012602880658436233,
+        -0.04436728395061727,
+        -0.01774691358024688
+      ],
+      "mean_difference": -0.01760402377686329,
+      "ci95": [
+        -0.02814929126657521,
+        -0.008001828989483317
+      ],
+      "subjects_improved": 8,
+      "wilcoxon_p": 0.01171875
+    },
+    {
+      "method": "oracle_power_risk",
+      "baseline": "lr_confidence_high",
+      "scope": "-15",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        0.0006385696040868694,
+        0.0,
+        -0.0063856960408684715,
+        0.005747126436781602,
+        0.007662835249042155,
+        -0.005747126436781602,
+        -0.004469987228607919,
+        -0.03001277139208175,
+        0.011494252873563204
+      ],
+      "mean_difference": -0.002341421881651768,
+      "ci95": [
+        -0.010502696182772815,
+        0.004115226337448559
+      ],
+      "subjects_improved": 4,
+      "wilcoxon_p": 0.984375
+    }
+  ],
+  "protocol_sha256": "d505c66797f2afcaccadbceb5208c276dd9637b1e91541d26e9cf33d2dda8dc5",
+  "versions": {
+    "mne": "1.12.1",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "pandas": "2.2.3"
+  },
+  "python": "3.12.14",
+  "offline_cached_subset": true,
+  "limitations": [
+    "Exploratory public-development-data analysis; no new sealed confirmation.",
+    "At most two donors per person; not the full 247-donor bank.",
+    "High-frequency mapping is approximate; no online or clinical safety claim.",
+    "All six candidates reported; oracle unavailable at deployment."
+  ]
+}

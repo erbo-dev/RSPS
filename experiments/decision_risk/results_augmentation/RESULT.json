@@ -1,0 +1,310 @@
+{
+  "status": "completed_exploratory_followup",
+  "n_evaluation_pairs": 77760,
+  "methods": [
+    "original_decoder",
+    "real_artifact_augmented",
+    "estimated_corrected_augmented"
+  ],
+  "comparisons": [
+    {
+      "method": "real_artifact_augmented",
+      "baseline": "original_decoder",
+      "scope": "all",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        -0.06597222222222221,
+        -0.007844650205761305,
+        -0.07561728395061729,
+        -0.03125,
+        -0.004243827160493818,
+        -0.091820987654321,
+        0.005658436213991758,
+        -0.06314300411522634,
+        -0.08809156378600824
+      ],
+      "mean_difference": -0.04692501143118427,
+      "ci95": [
+        -0.0697162922953818,
+        -0.0233764146090535
+      ],
+      "subjects_improved": 8,
+      "wilcoxon_p": 0.01171875,
+      "coverage": 0.9
+    },
+    {
+      "method": "real_artifact_augmented",
+      "baseline": "original_decoder",
+      "scope": "all",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        -0.060532407407407396,
+        -0.004513888888888873,
+        -0.07222222222222224,
+        -0.029398148148148173,
+        -0.000694444444444442,
+        -0.09756944444444443,
+        -0.002662037037037046,
+        -0.06180555555555553,
+        -0.08229166666666665
+      ],
+      "mean_difference": -0.04574331275720164,
+      "ci95": [
+        -0.0685574202674897,
+        -0.02292856224279836
+      ],
+      "subjects_improved": 9,
+      "wilcoxon_p": 0.00390625,
+      "coverage": 1.0
+    },
+    {
+      "method": "real_artifact_augmented",
+      "baseline": "original_decoder",
+      "scope": "-15",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        -0.023627075351213278,
+        -0.0038314176245210496,
+        -0.03831417624521072,
+        -0.0012771392081736832,
+        0.006385696040868416,
+        -0.01915708812260536,
+        0.005108556832694733,
+        -0.06257982120051087,
+        -0.04022988505747127
+      ],
+      "mean_difference": -0.019724705548460342,
+      "ci95": [
+        -0.0346246629771534,
+        -0.005816304810557718
+      ],
+      "subjects_improved": 7,
+      "wilcoxon_p": 0.07421875,
+      "coverage": 0.9
+    },
+    {
+      "method": "real_artifact_augmented",
+      "baseline": "original_decoder",
+      "scope": "-15",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        -0.030092592592592615,
+        -0.0040509259259259855,
+        -0.049189814814814825,
+        -0.005787037037037035,
+        0.0,
+        -0.03819444444444442,
+        -0.00405092592592593,
+        -0.054398148148148195,
+        -0.05439814814814814
+      ],
+      "mean_difference": -0.026684670781893016,
+      "ci95": [
+        -0.041152263374485604,
+        -0.012344071502057644
+      ],
+      "subjects_improved": 8,
+      "wilcoxon_p": 0.0078125,
+      "coverage": 1.0
+    },
+    {
+      "method": "estimated_corrected_augmented",
+      "baseline": "original_decoder",
+      "scope": "all",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        -0.04436728395061729,
+        -0.00552983539094648,
+        -0.10146604938271606,
+        -0.009645061728395021,
+        -0.007716049382716028,
+        -0.07844650205761317,
+        -0.011059670781893016,
+        -0.02777777777777779,
+        -0.07098765432098764
+      ],
+      "mean_difference": -0.039666209419295835,
+      "ci95": [
+        -0.06271504915409236,
+        -0.018518518518518507
+      ],
+      "subjects_improved": 9,
+      "wilcoxon_p": 0.00390625,
+      "coverage": 0.9
+    },
+    {
+      "method": "estimated_corrected_augmented",
+      "baseline": "original_decoder",
+      "scope": "all",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        -0.04120370370370369,
+        -0.006134259259259256,
+        -0.1027777777777778,
+        -0.016898148148148162,
+        -0.004398148148148151,
+        -0.08680555555555558,
+        -0.016435185185185164,
+        -0.028124999999999983,
+        -0.06493055555555555
+      ],
+      "mean_difference": -0.04085648148148149,
+      "ci95": [
+        -0.0640821116255144,
+        -0.019752443415637862
+      ],
+      "subjects_improved": 9,
+      "wilcoxon_p": 0.00390625,
+      "coverage": 1.0
+    },
+    {
+      "method": "estimated_corrected_augmented",
+      "baseline": "original_decoder",
+      "scope": "-15",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        -0.0031928480204342358,
+        0.0012771392081737387,
+        0.0063856960408684715,
+        0.008939974457215838,
+        0.008939974457215782,
+        -0.013409961685823757,
+        0.008301404853128969,
+        -0.0025542784163473664,
+        -0.0715197956577267
+      ],
+      "mean_difference": -0.006314743862636585,
+      "ci95": [
+        -0.02405278842060451,
+        0.005463317723854105
+      ],
+      "subjects_improved": 4,
+      "wilcoxon_p": 1.0,
+      "coverage": 0.9
+    },
+    {
+      "method": "estimated_corrected_augmented",
+      "baseline": "original_decoder",
+      "scope": "-15",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subject_differences": [
+        -0.02719907407407407,
+        0.0028935185185184897,
+        -0.021412037037037035,
+        -0.005787037037037035,
+        0.0011574074074074403,
+        -0.028935185185185175,
+        -0.00462962962962965,
+        -0.01620370370370372,
+        -0.08969907407407407
+      ],
+      "mean_difference": -0.02109053497942387,
+      "ci95": [
+        -0.04050925925925926,
+        -0.0066872427983539024
+      ],
+      "subjects_improved": 7,
+      "wilcoxon_p": 0.01953125,
+      "coverage": 1.0
+    }
+  ],
+  "include_switch": false,
+  "n_donors": 12,
+  "donor_subjects": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "full_bank": false,
+  "protocol_sha256": "9ee42f1e7d5771113c85e55c739b790ea40cc49f46f7310bcf72ffd6e68ef490",
+  "switch_protocol_sha256": null,
+  "limitations": [
+    "Follow-up after observing first pilot; not independent confirmation.",
+    "Nine host subjects; 12 real donors from 6 artifact people.",
+    "Training on contaminated data is not itself novel.",
+    "No online safety, clinical or real-time validation."
+  ]
+}

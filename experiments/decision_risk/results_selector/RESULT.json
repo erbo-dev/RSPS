@@ -1,0 +1,10 @@
+{
+  "status": "completed_exploratory_calibrated_choice",
+  "original_grid_control_errors_identical": true,
+  "n_variant_pairs": 139968,
+  "calibration_constant_fallbacks": 1,
+  "host_people": 9,
+  "artifact_people": 6,
+  "protocol_sha256": "3274a259f5d767d00af4b17c2b086dee83c436a43de4627a0b2106e3dea95457",
+  "note": "Recipe specified after prior outcomes on same public sources; no independent confirmation."
+}

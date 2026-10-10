@@ -1,0 +1,4 @@
+method,n,errors,choice_augmented,accuracy
+calibrated_decoder_choice,3888,999,241,0.7430555555555556
+original_decoder,3888,936,241,0.7592592592592593
+real_artifact_augmented,3888,1102,241,0.7165637860082305
