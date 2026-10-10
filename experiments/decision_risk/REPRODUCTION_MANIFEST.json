@@ -1,0 +1,661 @@
+{
+  "date": "2026-10-10",
+  "base_repository_commit": "05d0c24c50b1bba4a660dc74f06ab286f85609d9",
+  "python": "3.12.14",
+  "versions": {
+    "mne": "1.12.1",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "pandas": "2.2.3",
+    "requests": "2.34.2",
+    "matplotlib": "3.10.8"
+  },
+  "seed": 20261010,
+  "code_sha256": {
+    "plot_results.py": "b760df90a5ecadcb8497979570b50d0bf5b75f99f9ead4027075190a2f5024dd",
+    "selector.py": "28807c82918b0652af2f91da2c93acf294e3da19b194afd829465360a01f059e",
+    "verify_results.py": "2f76065c07760b495b1453da2733b8ca456ee3451e7dc2e123622ebae7d4daa5",
+    "stress.py": "203254875e14079a76d1bb7e2bf6200c3b2e4fa91579f44e6ba0305da6ca99bf",
+    "augmentation.py": "fac0712b3173d9d8492d395f75a8513cfc6140eed63eeb09fd7bfb6e9aca6a31",
+    "run.py": "787ca6fa904d1ea92110062dc1bfcd6de0cf7eab3ac152497785d2e20e7eca3c",
+    "data.py": "57c23d19a48ea5791eb42219ac94ffd9c6537c61ae635a85d83ad6f3bd839a61",
+    "reproduce.py": "e3d4461a488d14c44c7dcc268ca7e403a557a4994e00ecca93e51148f71065b8",
+    "test_experiment.py": "2efb84375ede1e24a5a6f33e3aedceebc2ad2718c7ede924668063d149364e1f"
+  },
+  "protocol_sha256": {
+    "SELECTOR_PROTOCOL.md": "3274a259f5d767d00af4b17c2b086dee83c436a43de4627a0b2106e3dea95457",
+    "STRESS_PROTOCOL.md": "7f5d0bee24cc6273bee427484ebb5597a14b5d18a3e60f5989d5276a85cca987",
+    "AUGMENTATION_PROTOCOL.md": "9ee42f1e7d5771113c85e55c739b790ea40cc49f46f7310bcf72ffd6e68ef490",
+    "SWITCHING_PROTOCOL.md": "b2ca74015e0314fbb7b28da7dc8622a6cc8bae8372aac5bf7e4f5ff65c824283",
+    "PROTOCOL.md": "d505c66797f2afcaccadbceb5208c276dd9637b1e91541d26e9cf33d2dda8dc5"
+  },
+  "acquisition_amendment_sha256": "f04296679dec43c8dd8912d33955fc2c6b843ca81479ba22b95b50da099f4e19",
+  "host_sources": [
+    {
+      "source": "https://bnci-horizon-2020.eu/database/data-sets/001-2014/A01T.mat",
+      "sha256": "054f02e70cf9c4ada1517e9b9864f45407939c1062c6793516585c6f511d0325",
+      "units": "uV",
+      "session": "T only",
+      "filter": "MNE IIR 8-32; notch50 and IIR40-80",
+      "channels": [
+        "Fz",
+        "FC3",
+        "FC1",
+        "FCz",
+        "FC2",
+        "FC4",
+        "C5",
+        "C3",
+        "C1",
+        "Cz",
+        "C2",
+        "C4",
+        "C6",
+        "CP3",
+        "CP1",
+        "CP2",
+        "CP4",
+        "Pz",
+        "POz"
+      ],
+      "trials": 144
+    },
+    {
+      "source": "https://bnci-horizon-2020.eu/database/data-sets/001-2014/A02T.mat",
+      "sha256": "5ddd5cb520b1692c3ba1363f48d98f58f0e46f3699ee50d749947950fc39db27",
+      "units": "uV",
+      "session": "T only",
+      "filter": "MNE IIR 8-32; notch50 and IIR40-80",
+      "channels": [
+        "Fz",
+        "FC3",
+        "FC1",
+        "FCz",
+        "FC2",
+        "FC4",
+        "C5",
+        "C3",
+        "C1",
+        "Cz",
+        "C2",
+        "C4",
+        "C6",
+        "CP3",
+        "CP1",
+        "CP2",
+        "CP4",
+        "Pz",
+        "POz"
+      ],
+      "trials": 144
+    },
+    {
+      "source": "https://bnci-horizon-2020.eu/database/data-sets/001-2014/A03T.mat",
+      "sha256": "7e731ee8b681d5da6ecb11ae1d4e64b1653c7f15aad5d6b7620b25ce53141e80",
+      "units": "uV",
+      "session": "T only",
+      "filter": "MNE IIR 8-32; notch50 and IIR40-80",
+      "channels": [
+        "Fz",
+        "FC3",
+        "FC1",
+        "FCz",
+        "FC2",
+        "FC4",
+        "C5",
+        "C3",
+        "C1",
+        "Cz",
+        "C2",
+        "C4",
+        "C6",
+        "CP3",
+        "CP1",
+        "CP2",
+        "CP4",
+        "Pz",
+        "POz"
+      ],
+      "trials": 144
+    },
+    {
+      "source": "https://bnci-horizon-2020.eu/database/data-sets/001-2014/A04T.mat",
+      "sha256": "15850d81b95fc88cc8b9589eb9b713d49fa071e28adaf32d675b3eaa30591d6e",
+      "units": "uV",
+      "session": "T only",
+      "filter": "MNE IIR 8-32; notch50 and IIR40-80",
+      "channels": [
+        "Fz",
+        "FC3",
+        "FC1",
+        "FCz",
+        "FC2",
+        "FC4",
+        "C5",
+        "C3",
+        "C1",
+        "Cz",
+        "C2",
+        "C4",
+        "C6",
+        "CP3",
+        "CP1",
+        "CP2",
+        "CP4",
+        "Pz",
+        "POz"
+      ],
+      "trials": 144
+    },
+    {
+      "source": "https://bnci-horizon-2020.eu/database/data-sets/001-2014/A05T.mat",
+      "sha256": "77387d3b669f4ed9a7c1dac4dcba4c2c40c8910bae20fb961bb7cf5a94912950",
+      "units": "uV",
+      "session": "T only",
+      "filter": "MNE IIR 8-32; notch50 and IIR40-80",
+      "channels": [
+        "Fz",
+        "FC3",
+        "FC1",
+        "FCz",
+        "FC2",
+        "FC4",
+        "C5",
+        "C3",
+        "C1",
+        "Cz",
+        "C2",
+        "C4",
+        "C6",
+        "CP3",
+        "CP1",
+        "CP2",
+        "CP4",
+        "Pz",
+        "POz"
+      ],
+      "trials": 144
+    },
+    {
+      "source": "https://bnci-horizon-2020.eu/database/data-sets/001-2014/A06T.mat",
+      "sha256": "4dc3be1b0d60279134d1220323c73c68cf73799339a7fb224087a3c560a9a7e2",
+      "units": "uV",
+      "session": "T only",
+      "filter": "MNE IIR 8-32; notch50 and IIR40-80",
+      "channels": [
+        "Fz",
+        "FC3",
+        "FC1",
+        "FCz",
+        "FC2",
+        "FC4",
+        "C5",
+        "C3",
+        "C1",
+        "Cz",
+        "C2",
+        "C4",
+        "C6",
+        "CP3",
+        "CP1",
+        "CP2",
+        "CP4",
+        "Pz",
+        "POz"
+      ],
+      "trials": 144
+    },
+    {
+      "source": "https://bnci-horizon-2020.eu/database/data-sets/001-2014/A07T.mat",
+      "sha256": "43b6bbef0be78f0ac2b66cb2d9679091f1f5b7f0a5d4ebef73d2c7cc8e11aa96",
+      "units": "uV",
+      "session": "T only",
+      "filter": "MNE IIR 8-32; notch50 and IIR40-80",
+      "channels": [
+        "Fz",
+        "FC3",
+        "FC1",
+        "FCz",
+        "FC2",
+        "FC4",
+        "C5",
+        "C3",
+        "C1",
+        "Cz",
+        "C2",
+        "C4",
+        "C6",
+        "CP3",
+        "CP1",
+        "CP2",
+        "CP4",
+        "Pz",
+        "POz"
+      ],
+      "trials": 144
+    },
+    {
+      "source": "https://bnci-horizon-2020.eu/database/data-sets/001-2014/A08T.mat",
+      "sha256": "7a4b3bd602d5bc307d3f4527fca2cf076659e94aca584dd64f6286fd413a82f2",
+      "units": "uV",
+      "session": "T only",
+      "filter": "MNE IIR 8-32; notch50 and IIR40-80",
+      "channels": [
+        "Fz",
+        "FC3",
+        "FC1",
+        "FCz",
+        "FC2",
+        "FC4",
+        "C5",
+        "C3",
+        "C1",
+        "Cz",
+        "C2",
+        "C4",
+        "C6",
+        "CP3",
+        "CP1",
+        "CP2",
+        "CP4",
+        "Pz",
+        "POz"
+      ],
+      "trials": 144
+    },
+    {
+      "source": "https://bnci-horizon-2020.eu/database/data-sets/001-2014/A09T.mat",
+      "sha256": "b28d8a262c779c8cad9cc80ee6aa9c5691cfa6617c03befe490a090347ebd15c",
+      "units": "uV",
+      "session": "T only",
+      "filter": "MNE IIR 8-32; notch50 and IIR40-80",
+      "channels": [
+        "Fz",
+        "FC3",
+        "FC1",
+        "FCz",
+        "FC2",
+        "FC4",
+        "C5",
+        "C3",
+        "C1",
+        "Cz",
+        "C2",
+        "C4",
+        "C6",
+        "CP3",
+        "CP1",
+        "CP2",
+        "CP4",
+        "Pz",
+        "POz"
+      ],
+      "trials": 144
+    }
+  ],
+  "donor_subset": {
+    "offline_cached": true,
+    "selected_ids": [
+      "P01_R01_CHEW01",
+      "P01_R01_CHEW02",
+      "P02_R02_CHEW01",
+      "P02_R02_CHEW02",
+      "P03_R01_CHEW01",
+      "P03_R01_CHEW02",
+      "P04_R01_CHEW01",
+      "P04_R01_CHEW02",
+      "P05_R01_CHEW01",
+      "P05_R02_CHEW01",
+      "P06_R01_CHEW01",
+      "P06_R01_CHEW02"
+    ],
+    "selected_subjects": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "donor_range_records": [
+    {
+      "relative_path": "edf/P01_R01/P01_R01_CHEW01.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-1/eeg/sub-1_task-artifact_run-01_eeg.edf",
+      "range": [
+        80569364,
+        81632389
+      ],
+      "content_range": "bytes 80569364-81632389/147894344",
+      "etag": "\"f5566949fe43b7a71f4547c5c22d4c30\"",
+      "sha256": "91e242f97003892db1f94bdce8ee894c856b0328934e6cf920a28752655bb7cc"
+    },
+    {
+      "relative_path": "edf/P01_R01/P01_R01_CHEW02.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-1/eeg/sub-1_task-artifact_run-01_eeg.edf",
+      "range": [
+        84230898,
+        85412037
+      ],
+      "content_range": "bytes 84230898-85412037/147894344",
+      "etag": "\"f5566949fe43b7a71f4547c5c22d4c30\"",
+      "sha256": "8e0068da7a3a821e8d347290b0f6d2f790daa31132210f561412d978c78580c2"
+    },
+    {
+      "relative_path": "edf/P01_R01/fixed.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-1/eeg/sub-1_task-artifact_run-01_eeg.edf",
+      "range": [
+        0,
+        255
+      ],
+      "content_range": "bytes 0-255/147894344",
+      "etag": "\"f5566949fe43b7a71f4547c5c22d4c30\"",
+      "sha256": "31c38f8a8a9ce81ddbdd9e889dd5a6fd47b5d6908843f7f3a97152618837e745"
+    },
+    {
+      "relative_path": "edf/P01_R01/header.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-1/eeg/sub-1_task-artifact_run-01_eeg.edf",
+      "range": [
+        0,
+        15615
+      ],
+      "content_range": "bytes 0-15615/147894344",
+      "etag": "\"f5566949fe43b7a71f4547c5c22d4c30\"",
+      "sha256": "970abf285d60f26dc589eae87fdbc6f4e5a3aceb64d2078ba3f885df07d5af91"
+    },
+    {
+      "relative_path": "edf/P02_R02/P02_R02_CHEW01.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-2/eeg/sub-2_task-artifact_run-02_eeg.edf",
+      "range": [
+        83994670,
+        85293923
+      ],
+      "content_range": "bytes 83994670-85293923/154390614",
+      "etag": "\"8b43986b95d083a9eeb862e43777bad1\"",
+      "sha256": "8be110a859e5011ee05bfaa35d499c8a30db40ca69e8fd653cc04bef1d1c6c1d"
+    },
+    {
+      "relative_path": "edf/P02_R02/P02_R02_CHEW02.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-2/eeg/sub-2_task-artifact_run-02_eeg.edf",
+      "range": [
+        94270588,
+        95687955
+      ],
+      "content_range": "bytes 94270588-95687955/154390614",
+      "etag": "\"8b43986b95d083a9eeb862e43777bad1\"",
+      "sha256": "05f6f7ee0f6dac5538be6840c12ef907de0de52c698469e9f5910df1c01ffd6d"
+    },
+    {
+      "relative_path": "edf/P02_R02/fixed.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-2/eeg/sub-2_task-artifact_run-02_eeg.edf",
+      "range": [
+        0,
+        255
+      ],
+      "content_range": "bytes 0-255/154390614",
+      "etag": "\"8b43986b95d083a9eeb862e43777bad1\"",
+      "sha256": "8c4a8d6a155891489714eabe3f1ec4d685933aa36271ed94a76f73211f120868"
+    },
+    {
+      "relative_path": "edf/P02_R02/header.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-2/eeg/sub-2_task-artifact_run-02_eeg.edf",
+      "range": [
+        0,
+        15615
+      ],
+      "content_range": "bytes 0-15615/154390614",
+      "etag": "\"8b43986b95d083a9eeb862e43777bad1\"",
+      "sha256": "3efb76aaaa63f9b14702a6b1fd8f13320b708d146d89a19f920349fce85aac58"
+    },
+    {
+      "relative_path": "edf/P03_R01/P03_R01_CHEW01.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-3/eeg/sub-3_task-artifact_run-01_eeg.edf",
+      "range": [
+        77734628,
+        79151995
+      ],
+      "content_range": "bytes 77734628-79151995/135138032",
+      "etag": "\"651480e2861a5fa70cf468d2ee3a036b\"",
+      "sha256": "179222a281bc5bfa36d8a10abfa2e0c6428a108629ea4bc599686d949e41c888"
+    },
+    {
+      "relative_path": "edf/P03_R01/P03_R01_CHEW02.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-3/eeg/sub-3_task-artifact_run-01_eeg.edf",
+      "range": [
+        81632390,
+        83167871
+      ],
+      "content_range": "bytes 81632390-83167871/135138032",
+      "etag": "\"651480e2861a5fa70cf468d2ee3a036b\"",
+      "sha256": "6e2afc9fda954cd9e3da51270427a8e342c3d22468e8e8d7aa1c0e139f788e24"
+    },
+    {
+      "relative_path": "edf/P03_R01/fixed.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-3/eeg/sub-3_task-artifact_run-01_eeg.edf",
+      "range": [
+        0,
+        255
+      ],
+      "content_range": "bytes 0-255/135138032",
+      "etag": "\"651480e2861a5fa70cf468d2ee3a036b\"",
+      "sha256": "4b677953591db00eacfb58268eab6fa4fa3b2b3dc4f1629f573c2a6862bf15c4"
+    },
+    {
+      "relative_path": "edf/P03_R01/header.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-3/eeg/sub-3_task-artifact_run-01_eeg.edf",
+      "range": [
+        0,
+        15615
+      ],
+      "content_range": "bytes 0-15615/135138032",
+      "etag": "\"651480e2861a5fa70cf468d2ee3a036b\"",
+      "sha256": "18bb61817b0e4cd27c226cdf292d14680184b86a3a8055de2b081b2119d27a27"
+    },
+    {
+      "relative_path": "edf/P04_R01/P04_R01_CHEW01.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-4/eeg/sub-4_task-artifact_run-01_eeg.edf",
+      "range": [
+        66041342,
+        67340595
+      ],
+      "content_range": "bytes 66041342-67340595/171989600",
+      "etag": "\"3d0b51011a685ffeb7f1e47ebd89e8ce\"",
+      "sha256": "b622380894b32d536d42ab18dafaf378f7a9aed3e3f2025df954740db63c0c34"
+    },
+    {
+      "relative_path": "edf/P04_R01/P04_R01_CHEW02.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-4/eeg/sub-4_task-artifact_run-01_eeg.edf",
+      "range": [
+        69939104,
+        71356471
+      ],
+      "content_range": "bytes 69939104-71356471/171989600",
+      "etag": "\"3d0b51011a685ffeb7f1e47ebd89e8ce\"",
+      "sha256": "8f8de2701faaa88f194683f8c9762de88124319826728d053760474615711851"
+    },
+    {
+      "relative_path": "edf/P04_R01/fixed.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-4/eeg/sub-4_task-artifact_run-01_eeg.edf",
+      "range": [
+        0,
+        255
+      ],
+      "content_range": "bytes 0-255/171989600",
+      "etag": "\"3d0b51011a685ffeb7f1e47ebd89e8ce\"",
+      "sha256": "db4d7ec36156957c217691495e17a001e39a7b5a83775e7de17dc9f5e1df5c37"
+    },
+    {
+      "relative_path": "edf/P04_R01/header.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-4/eeg/sub-4_task-artifact_run-01_eeg.edf",
+      "range": [
+        0,
+        15615
+      ],
+      "content_range": "bytes 0-15615/171989600",
+      "etag": "\"3d0b51011a685ffeb7f1e47ebd89e8ce\"",
+      "sha256": "039bd1783c9750e2a3f04781d81ffdb88a49b8585bcb1dfd0eca95021d740125"
+    },
+    {
+      "relative_path": "edf/P05_R01/P05_R01_CHEW01.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-5/eeg/sub-5_task-artifact_run-01_eeg.edf",
+      "range": [
+        91199624,
+        92262649
+      ],
+      "content_range": "bytes 91199624-92262649/145295836",
+      "etag": "\"146ff7b682687198dfb7f2934e56ddcb\"",
+      "sha256": "12966aa06ee76c155c89eba0d0ba7d8bc3d40e4a3a868cf3285a17b62b623ca7"
+    },
+    {
+      "relative_path": "edf/P05_R01/fixed.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-5/eeg/sub-5_task-artifact_run-01_eeg.edf",
+      "range": [
+        0,
+        255
+      ],
+      "content_range": "bytes 0-255/145295836",
+      "etag": "\"146ff7b682687198dfb7f2934e56ddcb\"",
+      "sha256": "dea148d3154518ed5a510559a0448812bb7507d6cd62b5fbee9fccf573a42fd6"
+    },
+    {
+      "relative_path": "edf/P05_R01/header.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-5/eeg/sub-5_task-artifact_run-01_eeg.edf",
+      "range": [
+        0,
+        15615
+      ],
+      "content_range": "bytes 0-15615/145295836",
+      "etag": "\"146ff7b682687198dfb7f2934e56ddcb\"",
+      "sha256": "77a1d393fe3dbdf09b52490560f5f427e7f88b994c5b2c3f82a737929df13e8f"
+    },
+    {
+      "relative_path": "edf/P05_R02/P05_R02_CHEW01.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-5/eeg/sub-5_task-artifact_run-02_eeg.edf",
+      "range": [
+        78679540,
+        80096907
+      ],
+      "content_range": "bytes 78679540-80096907/136319172",
+      "etag": "\"edb03693ba4438ed4d81ef865ce7bc00\"",
+      "sha256": "09b44de17e2bcd604bb89dfc1e43d77d267e1dda24d4d93b11f3539bb4589009"
+    },
+    {
+      "relative_path": "edf/P05_R02/fixed.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-5/eeg/sub-5_task-artifact_run-02_eeg.edf",
+      "range": [
+        0,
+        255
+      ],
+      "content_range": "bytes 0-255/136319172",
+      "etag": "\"edb03693ba4438ed4d81ef865ce7bc00\"",
+      "sha256": "e5be691272455a2432b72c02a55fa3737dde6c4535f7bbda201569a00a63b274"
+    },
+    {
+      "relative_path": "edf/P05_R02/header.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-5/eeg/sub-5_task-artifact_run-02_eeg.edf",
+      "range": [
+        0,
+        15615
+      ],
+      "content_range": "bytes 0-15615/136319172",
+      "etag": "\"edb03693ba4438ed4d81ef865ce7bc00\"",
+      "sha256": "ef7bf3279c47862607f78594d980d623dfcc5b94f9ff0a25bbe8b48c213887b0"
+    },
+    {
+      "relative_path": "edf/P06_R01/P06_R01_CHEW01.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-6/eeg/sub-6_task-artifact_run-01_eeg.edf",
+      "range": [
+        90845282,
+        91908307
+      ],
+      "content_range": "bytes 90845282-91908307/160532542",
+      "etag": "\"fcbc989bc9fcc22e5e1505dfe2cb657d\"",
+      "sha256": "cef5511ab444d6caef9c0e457e377d3c7e5f5094748ed6c85cba632963ebb33a"
+    },
+    {
+      "relative_path": "edf/P06_R01/P06_R01_CHEW02.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-6/eeg/sub-6_task-artifact_run-01_eeg.edf",
+      "range": [
+        94506816,
+        95806069
+      ],
+      "content_range": "bytes 94506816-95806069/160532542",
+      "etag": "\"fcbc989bc9fcc22e5e1505dfe2cb657d\"",
+      "sha256": "135ebffc5b6661f523319fa6f605c4679190b46ea85f52a1f7e004f652a40312"
+    },
+    {
+      "relative_path": "edf/P06_R01/fixed.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-6/eeg/sub-6_task-artifact_run-01_eeg.edf",
+      "range": [
+        0,
+        255
+      ],
+      "content_range": "bytes 0-255/160532542",
+      "etag": "\"fcbc989bc9fcc22e5e1505dfe2cb657d\"",
+      "sha256": "128709fd51dc80489f31531e84ac023284bed0e134e114f2ab87018f280fd359"
+    },
+    {
+      "relative_path": "edf/P06_R01/header.bin.json",
+      "url": "https://s3.amazonaws.com/openneuro.org/ds006386/sub-6/eeg/sub-6_task-artifact_run-01_eeg.edf",
+      "range": [
+        0,
+        15615
+      ],
+      "content_range": "bytes 0-15615/160532542",
+      "etag": "\"fcbc989bc9fcc22e5e1505dfe2cb657d\"",
+      "sha256": "23cec0e3dc18e3194bc93ce07b75d2f764a00624cec40d897e7852606f4d3345"
+    }
+  ],
+  "processed_cache_sha256": {
+    "host_1.npz": "15413cbee4881bbc00801a778f6b3e2387a44b1fc3ec4dda97f27b72ea4f82ba",
+    "host_2.npz": "8708f31203d94321ed0b4045a5ee8206b4b198656cb5d1558c6f33315e5f9b7c",
+    "host_3.npz": "5db67784766c27a642fca58310767f4537b8f85d94be19b95eb785d59d6c0084",
+    "host_4.npz": "82f15ae1b6ffb1acab178472cf4bac704fddb9d6bc5bdcf7f1fa2a34d40e073b",
+    "host_5.npz": "ac5040b7f39eab166d0258df80829268705ef45709d8facd17c15bf0e4505a4b",
+    "host_6.npz": "4948b98c1aec8bd8a5c9e2a6b98c0ac4460a2fefd13897822f8d780ab4a1b29e",
+    "host_7.npz": "c3fd202cb204511c8d7a3169d1f56c9151d276ce9094e4159a565c4383c36483",
+    "host_8.npz": "874c1e547695127c087f0d03b9b63f55ae372313f51584654c95114fcfb7f64c",
+    "host_9.npz": "e43cb58a2a34f7dbdac17fdc25ad79374028e40b1d3e66b3ff8f18fa8759745a",
+    "pilot_bank_cached.npz": "e8655af24f4fb1638afa780cda1af2252dd354cacfab06cff323c068daee98fc"
+  },
+  "note": "Code SHA records the final reproducible implementation. Some export-only metadata fields were added after the first outcomes; paired-output audit checks that scores and errors are unchanged.",
+  "cached_end_to_end_reproduction": {
+    "status": "passed",
+    "checked": [
+      "results/summary.csv",
+      "results/fold_metrics.csv",
+      "results/power_diagnostics.csv",
+      "results/clean_guard.csv",
+      "results/evaluation_pairs.npz common arrays exactly equal",
+      "results_augmentation/summary.csv",
+      "results_augmentation/clean_metrics.csv",
+      "results_augmentation/fold_metrics.csv",
+      "results_augmentation/evaluation_pairs.npz common arrays exactly equal",
+      "results_switching/summary.csv",
+      "results_switching/clean_metrics.csv",
+      "results_switching/fold_metrics.csv",
+      "results_switching/evaluation_pairs.npz common arrays exactly equal",
+      "results_stress/summary.csv",
+      "results_stress/clean_metrics.csv",
+      "results_stress/clean_summary.csv",
+      "results_stress/fold_metrics.csv",
+      "results_selector/summary.csv",
+      "results_selector/clean_metrics.csv",
+      "results_selector/clean_summary.csv",
+      "results_selector/fold_metrics.csv",
+      "results_selector/evaluation_pairs.npz common arrays exactly equal"
+    ],
+    "checkpoint_repairs": [
+      {
+        "file": "results/fold_metrics.csv",
+        "previous_rows": 24645,
+        "complete_rows": 25110,
+        "added_rows": 465,
+        "note": "Previous detailed CSV was a checkpoint missing the last test run. All existing rows reproduced exactly; full summary and 77,760 outcome arrays were already complete and exactly reproduced."
+      }
+    ],
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python experiments/decision_risk/reproduce.py --cache <complete-pilot-cache> --out <fresh-output>",
+    "note": "All saved outcome arrays and complete summaries reproduced exactly. The partial detailed stage-one CSV was completed from the verified reproduction. No reported aggregate changed."
+  }
+}

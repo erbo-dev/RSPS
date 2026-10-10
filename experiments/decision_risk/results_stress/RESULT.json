@@ -1,0 +1,27 @@
+{
+  "status": "completed_frozen_recipe_challenge",
+  "train_snr": [
+    2.0,
+    0.0,
+    -3.0,
+    -7.0,
+    -15.0
+  ],
+  "evaluated_snr": [
+    2.0,
+    0.0,
+    -3.0,
+    -7.0,
+    -15.0,
+    6.0,
+    12.0,
+    20.0,
+    30.0
+  ],
+  "original_grid_error_vectors_identical": true,
+  "n_variant_pairs": 139968,
+  "host_people": 9,
+  "artifact_people": 6,
+  "protocol_sha256": "7f5d0bee24cc6273bee427484ebb5597a14b5d18a3e60f5989d5276a85cca987",
+  "note": "Same source trials and people; only amplitude extended. No independent confirmation."
+}

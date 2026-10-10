@@ -1,0 +1,8 @@
+{
+  "shape": [
+    19,
+    9000
+  ],
+  "max_absolute_error_uV": 6.184563972055912e-11,
+  "reference": "MNE 1.12.1 read_raw_edf on identical cropped EDF records"
+}
